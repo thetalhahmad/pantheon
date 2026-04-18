@@ -2,96 +2,138 @@
 
 **Guild:** Design
 **Model:** Sonnet
-**Transport:** Bridge (WebSocket → Figma Plugin API) + Official Figma MCP
+**Engine:** Bridge DS (compiler-driven Figma generation)
 **GitHub:** `pantheon/agents/iris/`
 
-> *Goddess of the rainbow. Translates product requirements into production-ready Figma designs using your real design system.*
+> *Goddess of the rainbow. Generates production-ready Figma designs that are guaranteed DS-compliant by construction, not by verification.*
 
 ---
 
-## What Iris Does
+## What Makes Iris Different
 
-- Reads PRDs from Notion and generates complete Figma screen designs
-- Uses **Bridge** to write directly to Figma via the Plugin API — real DS components, bound variables, text styles
-- Uses **atomic generation** — splits every screen into 5-7 sequential steps, screenshots after each
-- Extracts your design system keys (components, variables, text styles) automatically
-- Annotates all interaction states: default, hover, active, disabled, loading, error, empty
-- Produces handoff notes for Hephaestus and Pallas
+Most AI design tools approximate your design system. Iris uses **Bridge DS** — a compiler that takes declarative design intent (CSpec YAML) and enforces:
+- All 26 Figma Plugin API rules automatically
+- 100% DS token compliance (no hardcoded values)
+- Real component instances imported from your actual Figma library
+- Bound variables (not approximated fills)
 
----
-
-## When to Use Iris
-
-- After Hermes writes a PRD and Mnemon compresses it
-- When building new product screens or user flows
-- When updating existing designs to match new requirements
-- Before handing off to Hephaestus (full stack) or Pallas (frontend)
+The result is Figma output a designer would be proud of, not a mockup that needs manual cleanup.
 
 ---
 
-## Setup Requirements
+## Architecture
 
-```bash
-# Install Bridge
-curl -fsSL https://raw.githubusercontent.com/noemuch/bridge/main/install.sh | bash
-
-# Initialize per project (connects Bridge to Figma, extracts DS keys)
-bridge init
-
-# Start server for each session
-bridge start
+```
+Iris writes CSpec YAML
+  → Converts to Scene Graph JSON
+  → bridge-ds compile enforces all rules + resolves all tokens
+  → Compiler output executed in Figma via MCP
+  → Screenshot taken and verified
+  → Design shipped
 ```
 
-Also connect the official Figma MCP for screenshot verification:
+Iris never writes raw Figma Plugin API code. The compiler handles everything.
+
+---
+
+## Quick Start
+
 ```bash
-claude mcp add --scope user --transport http figma https://mcp.figma.com/mcp
+# 1. Install Bridge DS
+npm install -g @noemuch/bridge-ds
+
+# 2. Initialize project (one time — extracts DS, scaffolds KB)
+bridge-ds setup
+
+# 3. Start designing
+# In Claude Code:
+> make an invoice list screen with sidebar navigation
 ```
 
 ---
 
-## Skills
+## Commands
 
-| Skill | Description |
+| Command | What happens |
 |---|---|
-| `figma-workflow.md` | Bridge setup, atomic generation pattern, script sending |
-| `figma-api-rules.md` | All 26 Figma Plugin API rules — complete reference |
-| `design-system-extraction.md` | How to extract and use DS component/variable/style keys |
-| `saas-ui-patterns.md` | Dashboard, table, form, empty state patterns |
-| `accessibility.md` | WCAG 2.1 AA checklist, contrast, keyboard nav |
+| `make <description>` | Generate a new screen or component |
+| `fix` | Learn from your manual Figma corrections |
+| `done` / `ship it` | Archive and ship the design |
+| `setup bridge` | Initialize or refresh the knowledge base |
+| `drop` | Abandon current design |
+
+---
+
+## Workflow
+
+```
+setup bridge (once)
+    ↓
+make <description>   ← CSpec → compile → execute → screenshot → verify
+    ↓
+[iterate: describe changes OR "I adjusted in Figma" → fix]
+    ↓
+done                 ← final Gate B verification → archive → recipes updated
+```
+
+---
+
+## What's Inside
+
+```
+agents/iris/
+  agent.md                      ← Iris's core instructions + Bridge integration
+  README.md                     ← this file
+
+  skills/
+    figma-workflow.md            ← Bridge setup and transport
+    design-system-extraction.md  ← How DS keys work
+    figma-api-rules.md           ← Reference (compiler handles these, but good to know)
+    saas-ui-patterns.md          ← Dashboard, table, form patterns
+    accessibility.md             ← WCAG 2.1 AA checklist
+
+  bridge/                        ← Full Bridge DS embedded (always up to date)
+    BRIDGE-CLAUDE.md             ← Bridge's own CLAUDE.md
+    skills/
+      using-bridge.md            ← Command map + Iron Laws (force-loaded)
+      generating-figma-design.md ← Full make flow (5 phases, A-E)
+      extracting-design-system.md← DS setup and extraction
+      learning-from-corrections.md← fix flow
+      shipping-and-archiving.md  ← done flow
+    references/
+      compiler-reference.md      ← Scene graph JSON format + node types
+      transport-adapter.md       ← Console vs official MCP transport
+      verification-gates.md      ← Gate A (compile) + Gate B (visual)
+      red-flags-catalog.md       ← Rationalization → Reality table
+    templates/
+      screen-cspec.yaml          ← CSpec template for screens
+      component-cspec.yaml       ← CSpec template for components
+```
 
 ---
 
 ## Example Prompts
 
 ```
-"Iris, design the invoice list screen from this PRD: [Notion link]"
-"Iris, extract the DS keys from our Figma library"
-"Iris, design the empty state for the dashboard"
-"Iris, add loading and error states to the invoice list"
-"Iris, check the invoice form design for accessibility issues"
+"Iris, make an invoice list screen"
+"Iris, make a settings page with sidebar navigation"
+"Iris, make a Button component with primary and secondary variants"
+"I adjusted the header in Figma — fix"
+"ship it"
+"setup bridge"
 ```
 
 ---
 
-## How Atomic Generation Works
+## Source
 
-Iris never writes an entire screen in one script. Every design is built in sequential steps:
+Bridge DS is built by [noemuch](https://github.com/noemuch/bridge). The bridge/ folder in Iris is kept in sync with the upstream repo. When Bridge releases updates, pull the latest and re-embed.
 
-1. **Structure** — root frame + empty section frames
-2. **Header/Nav** — populate with real DS components + screenshot verify
-3. **Main content** — one step per major section + screenshot verify
-4. **Secondary elements** — footer, labels, badges
-5. **States** — loading, error, empty state variants
-
-This means if step 3 has a bug, only step 3 is re-run. Steps 1 and 2 are unchanged.
-
----
-
-## Key Difference from Standard Figma MCP
-
-The official Figma MCP reads designs and generates code FROM Figma. Bridge WRITES designs TO Figma using real Plugin API — the same API used by human designers building Figma plugins. This means:
-
-- Real design system components are imported and linked, not approximated
-- Variables are bound, not hardcoded
-- Text styles are applied, not manually sized
-- The output is production-ready Figma that a designer would be proud of
+```bash
+# To update Bridge files in Iris:
+git clone https://github.com/noemuch/bridge /tmp/bridge-latest
+cp /tmp/bridge-latest/skills/*/SKILL.md pantheon/agents/iris/bridge/skills/
+cp /tmp/bridge-latest/references/*.md pantheon/agents/iris/bridge/references/
+cp /tmp/bridge-latest/skills/generating-figma-design/references/templates/*.yaml pantheon/agents/iris/bridge/templates/
+cp /tmp/bridge-latest/CLAUDE.md pantheon/agents/iris/bridge/BRIDGE-CLAUDE.md
+```
