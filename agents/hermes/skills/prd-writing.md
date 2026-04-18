@@ -1,93 +1,160 @@
 # Skill: PRD Writing
 
-## Purpose
-Structure and write complete Product Requirements Documents that eliminate ambiguity and give every downstream agent (Iris, Hephaestus, Nike, Apollo) exactly what they need to execute.
+## The PRD Contract
+A PRD makes an implicit promise to every downstream agent: "If you read this document completely, you will have everything you need to execute your part of the work without asking follow-up questions."
+
+If Iris needs to ask Hermes a question, the PRD failed. If Hephaestus makes an assumption that turns out wrong, the PRD failed.
 
 ---
 
-## PRD Quality Checklist
+## Requirement Quality Standard: SMART+T
 
-Before marking a PRD done, verify:
+Every functional requirement must be:
+- **Specific** — names the exact thing that must happen
+- **Measurable** — can be verified with a test
+- **Achievable** — realistic given constraints
+- **Relevant** — traces back to a user story
+- **Time-bound** — assigned to a phase
+- **Testable** — Argus can write a test case for it directly
 
-- [ ] Executive summary is one paragraph, not a bullet list
-- [ ] Problem statement names a specific pain, not a generic category
-- [ ] Target users are specific people, not broad demographics
-- [ ] Every user story follows: "As a [specific user], I want [action], so that [outcome]"
-- [ ] Functional requirements use MUST / SHOULD / COULD language
-- [ ] Non-functional requirements have measurable targets (not "should be fast")
-- [ ] Out of scope section exists and has at least 3 items
-- [ ] Success metrics are quantified with a target and timeframe
-- [ ] Open questions are numbered and each has an owner
-- [ ] Implementation phases separate MVP from later work
+### Vague vs Specific Requirements
 
----
-
-## Requirement Language Standards
-
-### MUST (non-negotiable)
-Use when: failure to implement breaks the core value proposition
-Example: "The system MUST allow users to upload DICOM files under 2GB"
-
-### SHOULD (important, flexible)
-Use when: strongly desired but can be deferred if necessary
-Example: "The system SHOULD support bulk upload of multiple files simultaneously"
-
-### COULD (nice to have)
-Use when: beneficial but not required for MVP
-Example: "The system COULD suggest tags based on file metadata"
-
-### WON'T (explicit exclusion)
-Use when: something might be assumed but is out of scope
-Example: "The system WON'T support video file formats in this phase"
+| Vague (never write this) | Specific (write this) |
+|---|---|
+| "The system should be fast" | "Page load must be under 300ms at p95 for up to 500 concurrent users" |
+| "The UI should be intuitive" | "New users must complete first invoice in under 5 minutes without help documentation" |
+| "Support multiple users" | "Support up to 50 concurrent users in the same organisation with role-based access" |
+| "Handle errors gracefully" | "All API errors return a consistent JSON error shape with code, message, and recovery hint" |
+| "Secure the data" | "All PHI encrypted at rest (AES-256) and in transit (TLS 1.2+), audit log on every access" |
 
 ---
 
-## Non-Functional Requirement Templates
+## RICE Scoring
 
-### Performance
-"The [feature] MUST load within [X]ms for [Y]% of requests under [Z] concurrent users"
+Use RICE to prioritise features when stakeholders disagree or when you have more P1s than Phase 1 can hold.
 
-### Security
-"All [data type] MUST be encrypted at rest using AES-256 and in transit using TLS 1.2+"
+**Formula:** `(Reach × Impact × Confidence%) / Effort`
 
-### Accessibility
-"All UI components MUST meet WCAG 2.1 Level AA standards"
+| Factor | What it means | How to estimate |
+|---|---|---|
+| Reach | Users affected per month | Count from analytics or estimate from user base |
+| Impact | How much does it move the needle? | 3=massive, 2=significant, 1=low, 0.5=minimal |
+| Confidence | How sure are you? | 100%=high, 80%=medium, 50%=low |
+| Effort | Person-weeks to build | Ask Athena or Hephaestus |
 
-### Availability
-"The system MUST maintain [X]% uptime, measured monthly, excluding scheduled maintenance"
-
-### Scalability
-"The system MUST support [X] concurrent users without degradation in the first 12 months"
-
----
-
-## User Story Anti-Patterns
-
-### Bad user stories (never write these):
-- "As a user, I want the system to be fast" — unmeasurable
-- "As a user, I want all features to work" — meaningless
-- "As an admin, I want a dashboard" — no outcome stated
-- "The system shall allow users to..." — not a user story format
-
-### Good user stories (write these):
-- "As a radiologist reviewing a chest CT, I want AI-suggested findings highlighted on the image so that I can review them in order of clinical priority"
-- "As an accountant closing month-end, I want to lock a period so that no one can post entries to it after close"
+**Example:**
+- Invoice bulk export: Reach=200, Impact=2, Confidence=80%, Effort=2 → RICE = (200×2×0.8)/2 = 160
+- Dashboard chart: Reach=200, Impact=1, Confidence=60%, Effort=3 → RICE = (200×1×0.6)/3 = 40
+- Build invoice bulk export first.
 
 ---
 
-## Common PRD Mistakes to Avoid
+## Risk Assessment Framework
 
-1. **Solution in the requirements** — "The button should be blue" is a design decision, not a requirement
-2. **Missing the why** — every requirement should trace back to a user need
-3. **Implicit assumptions** — if you had to think about it, write it down
-4. **Scope creep language** — "and also...", "additionally we could..." — flag these as separate stories
-5. **No definition of done** — success metrics must be specific and measurable
+### Risk Severity Matrix
+```
+           | Low Impact | High Impact
+-----------|------------|------------
+High Prob  |  MEDIUM    |    HIGH
+Low Prob   |   LOW      |   MEDIUM
+```
+
+### Risk Categories for SaaS Products
+
+**Technical risks:**
+- New technology or framework the team hasn't used
+- Complex third-party integration with poor documentation
+- Data migration from existing system
+- Performance requirements that push limits of current architecture
+
+**Regulatory risks (especially relevant for Futuuri + accounting SaaS):**
+- HIPAA/GDPR compliance for new data flows
+- SOC 2 implications for new infrastructure
+- Financial reporting compliance (ASC 606, audit trail)
+- MDR SaMD classification if clinical functionality added
+
+**Adoption risks:**
+- Feature too complex — users won't learn it
+- Change in workflow — users will resist it
+- Missing onboarding — users won't discover it
+
+**Timeline risks:**
+- Dependency on another team or external API
+- Unclear requirements (open questions not answered)
+- Integration testing taking longer than expected
 
 ---
 
-## PRD Versioning
+## User Story Sizing Reference
 
-When updating an existing PRD:
-- Increment version number (1.0 → 1.1 for minor, 1.0 → 2.0 for major scope change)
-- Add change log entry with date and what changed
-- Flag any changes that affect work already in progress
+| Size | Time | What fits |
+|---|---|---|
+| XS | <4 hours | Single UI change, copy update, simple config |
+| S | 4-8 hours | Single endpoint + UI component |
+| M | 1-2 days | Feature with 2-3 endpoints + UI |
+| L | 3-5 days | Feature with data model changes + full UI |
+| XL | 1-2 weeks | Complex feature with multiple integrations |
+
+**Split any story larger than L.** XL stories have too much uncertainty to estimate accurately and too much scope to review cleanly.
+
+---
+
+## Acceptance Criteria Format (Given-When-Then)
+
+Every P0 user story needs at least 3 acceptance criteria:
+
+```
+Scenario: [descriptive name]
+Given: [initial context / precondition]
+When: [action taken]
+Then: [expected outcome]
+
+AND: [additional outcome if needed]
+```
+
+**Example for "As an accountant, I want to export invoices to CSV":**
+
+```
+Scenario: Standard export
+Given: I am on the invoice list with at least one invoice
+When: I click "Export to CSV"
+Then: A CSV file downloads immediately containing all visible invoices
+
+Scenario: Empty state
+Given: I am on the invoice list with no invoices
+When: I click "Export to CSV"
+Then: I see a message "No invoices to export" and no file downloads
+
+Scenario: Large export
+Given: I have 10,000+ invoices
+When: I click "Export to CSV"
+Then: I see a progress indicator and receive the file within 30 seconds
+```
+
+---
+
+## The Agent Handoff Section
+
+This section is what makes Hermes's PRDs different from standard PRDs. Every PRD must end with explicit instructions for each agent that will work on it.
+
+**Why it matters:** Mnemon will compress the PRD before passing it to other agents. Without clear handoff instructions, Mnemon might remove something Iris needs, or Hephaestus might build Phase 2 scope in Phase 1.
+
+**Template:**
+```
+## 13. Agent Handoff
+
+- **Mnemon:** Compress sections 4-6. Preserve all P0 requirements, acceptance criteria, 
+  non-functional requirements, and the phase scope exactly. Remove: stakeholder background, 
+  risk rationale, RICE calculations.
+
+- **Iris:** Design all P0 user stories in section 4. Cover all states: default, loading, 
+  error, empty. Reference design system. Do not design P1/P2 items unless Phase 1 is complete.
+
+- **Hephaestus:** Implement Phase 1 scope only (section 12). Use tech spec in section 6. 
+  Flag section 8 risks before starting.
+
+- **Argus:** Each user story = one test suite. Use acceptance criteria as test cases. 
+  Section 10 metrics = pass/fail thresholds.
+
+- **Athena:** Review sections 5, 6, 8. Produce architecture doc before Hephaestus starts.
+```
