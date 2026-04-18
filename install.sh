@@ -50,9 +50,9 @@ install_agent() {
 
 # Guild map
 declare -A GUILDS
-GUILDS[strategy]="hermes mnemon prometheus janus"
+GUILDS[strategy]="hermes mnemon prometheus janus kraken"
 GUILDS[design]="iris muse lumen kineto hestia"
-GUILDS[engineering]="hephaestus athena talos pallas forge argus proteus chiron"
+GUILDS[engineering]="hephaestus athena talos pallas forge argus proteus chiron nyx helios"
 GUILDS[sales]="nike peitho doros tyche"
 GUILDS[marketing]="apollo calliope eos orpheus kratos"
 GUILDS[domain]="asclepius plutus themis"
