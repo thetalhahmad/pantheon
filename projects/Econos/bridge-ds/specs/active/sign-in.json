@@ -1,0 +1,226 @@
+{
+  "name": "Auth/Sign In",
+  "description": "Sign In screen — 1440×900 horizontal split. Left panel cloned from the shared left panel (146:2). Right section centres a 420px card with email/password login form and Google SSO option.",
+  "figma": {
+    "fileKey": "RSqhYxJzRB87uMM9p4IxGx",
+    "pageId": "144:2",
+    "pageName": "Auth Screens",
+    "nodeId": "151:2"
+  },
+  "frame": {
+    "name": "Auth/Sign In",
+    "width": 1440,
+    "height": 900,
+    "layoutMode": "HORIZONTAL",
+    "padding": 0,
+    "gap": 0,
+    "x": 0,
+    "y": 0
+  },
+  "children": [
+    {
+      "name": "Left Panel (clone)",
+      "type": "FRAME",
+      "figmaId": "151:3",
+      "sourceClonedFrom": "146:2",
+      "width": 480,
+      "height": 900,
+      "layoutSizingVertical": "FILL",
+      "note": "Clone of shared left panel — see left-panel.json for full structure"
+    },
+    {
+      "name": "Right Section",
+      "type": "FRAME",
+      "figmaId": "151:22",
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "CENTER",
+      "counterAxisAlignItems": "CENTER",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "FILL",
+      "fill": {
+        "variable": "Neutral/50",
+        "variableId": "VariableID:8:25",
+        "hex": "#F8FAFC"
+      },
+      "children": [
+        {
+          "name": "Card",
+          "type": "FRAME",
+          "figmaId": "151:23",
+          "layoutMode": "VERTICAL",
+          "width": 420,
+          "gap": 16,
+          "padding": 40,
+          "fill": {
+            "variable": "Neutral/White",
+            "variableId": "VariableID:8:24",
+            "hex": "#FFFFFF"
+          },
+          "cornerRadius": {
+            "variable": "radius-xl",
+            "variableId": "VariableID:8:48",
+            "value": 16
+          },
+          "stroke": {
+            "variable": "Neutral/200",
+            "variableId": "VariableID:8:27",
+            "hex": "#E2E8F0",
+            "weight": 1,
+            "align": "OUTSIDE"
+          },
+          "children": [
+            {
+              "name": "Title",
+              "type": "TEXT",
+              "figmaId": "151:24",
+              "content": "Welcome back",
+              "textStyle": {
+                "id": "S:d8cff896db14f4032676c86c2484265230267c67,",
+                "name": "Type/H2",
+                "size": 24,
+                "style": "Semi Bold"
+              },
+              "fill": {
+                "variable": "Neutral/900",
+                "variableId": "VariableID:8:34",
+                "hex": "#0F172A"
+              }
+            },
+            {
+              "name": "Subtitle",
+              "type": "TEXT",
+              "figmaId": "151:25",
+              "content": "Sign in to your Econos account",
+              "textStyle": {
+                "id": "S:97c717422b498aeab704a7964e9f112b497da427,",
+                "name": "Type/Body",
+                "size": 14
+              },
+              "fill": {
+                "variable": "Neutral/500",
+                "variableId": "VariableID:8:30",
+                "hex": "#64748B"
+              },
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "name": "Google Button",
+              "type": "INSTANCE",
+              "figmaId": "154:45",
+              "componentSetKey": "a22b963dc513b422e3910dfdb24cc4398d61f71c",
+              "componentSetNodeId": "19:56",
+              "variantName": "Variant=Secondary, Size=Medium, State=Default",
+              "variantNodeId": "19:38",
+              "labelText": "Continue with Google",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "name": "Divider",
+              "type": "FRAME",
+              "figmaId": "154:47",
+              "layoutMode": "HORIZONTAL",
+              "counterAxisAlignItems": "CENTER",
+              "gap": 12,
+              "layoutSizingHorizontal": "FILL",
+              "fill": "transparent",
+              "children": [
+                {
+                  "name": "Line Left",
+                  "type": "RECTANGLE",
+                  "figmaId": "154:48",
+                  "height": 1,
+                  "layoutSizingHorizontal": "FILL",
+                  "fill": {
+                    "variable": "Neutral/200",
+                    "variableId": "VariableID:8:27",
+                    "hex": "#E2E8F0"
+                  }
+                },
+                {
+                  "name": "or",
+                  "type": "TEXT",
+                  "figmaId": "154:49",
+                  "content": "or",
+                  "textStyle": {
+                    "id": "S:2df2643b36f14cc8953d349ae7454e310cf99efc,",
+                    "name": "Type/Label",
+                    "size": 12
+                  },
+                  "fill": {
+                    "variable": "Neutral/400",
+                    "variableId": "VariableID:8:29",
+                    "hex": "#94A3B8"
+                  }
+                },
+                {
+                  "name": "Line Right",
+                  "type": "RECTANGLE",
+                  "figmaId": "154:50",
+                  "height": 1,
+                  "layoutSizingHorizontal": "FILL",
+                  "fill": {
+                    "variable": "Neutral/200",
+                    "variableId": "VariableID:8:27",
+                    "hex": "#E2E8F0"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Email Field",
+              "type": "INSTANCE",
+              "figmaId": "154:51",
+              "componentSetKey": "6d0b04753261dce26a6760e9111375552b0c0935",
+              "componentSetNodeId": "32:17",
+              "variantName": "State=Default",
+              "variantNodeId": "32:2",
+              "labelText": "Work email",
+              "placeholderText": "you@company.com",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "name": "Password Field",
+              "type": "INSTANCE",
+              "figmaId": "154:56",
+              "componentSetKey": "6d0b04753261dce26a6760e9111375552b0c0935",
+              "componentSetNodeId": "32:17",
+              "variantName": "State=Default",
+              "variantNodeId": "32:2",
+              "labelText": "Password",
+              "placeholderText": "••••••••",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "name": "Sign In Button",
+              "type": "INSTANCE",
+              "figmaId": "154:61",
+              "componentSetKey": "a22b963dc513b422e3910dfdb24cc4398d61f71c",
+              "componentSetNodeId": "19:56",
+              "variantName": "Variant=Primary, Size=Medium, State=Default",
+              "variantNodeId": "19:11",
+              "labelText": "Sign In",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "name": "Footer",
+              "type": "TEXT",
+              "figmaId": "154:63",
+              "content": "Don't have an account? Sign up",
+              "textStyle": {
+                "id": "S:97baf9ebce035b1b042a92f88288e369f0ab52ea,",
+                "name": "Type/Body-Small",
+                "size": 13
+              },
+              "fill": {
+                "variable": "Neutral/500",
+                "variableId": "VariableID:8:30",
+                "hex": "#64748B"
+              },
+              "textAlignHorizontal": "CENTER"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
