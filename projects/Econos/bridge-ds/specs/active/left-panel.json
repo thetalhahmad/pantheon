@@ -1,0 +1,220 @@
+{
+  "name": "Left Panel",
+  "description": "Shared left panel reused across all 8 auth screens. Built as a plain frame (not a component) — copied into each auth screen frame.",
+  "figma": {
+    "fileKey": "RSqhYxJzRB87uMM9p4IxGx",
+    "pageId": "144:2",
+    "pageName": "Auth Screens",
+    "nodeId": "146:2"
+  },
+  "frame": {
+    "width": 480,
+    "height": 900,
+    "layoutMode": "VERTICAL",
+    "padding": 48,
+    "background": {
+      "variable": "Primary/950",
+      "variableId": "VariableID:8:13",
+      "hex": "#1E1B4B"
+    }
+  },
+  "children": [
+    {
+      "name": "LogoRow",
+      "type": "FRAME",
+      "figmaId": "146:3",
+      "layout": "HORIZONTAL",
+      "gap": 10,
+      "alignItems": "CENTER",
+      "children": [
+        {
+          "name": "LogoMark",
+          "type": "RECTANGLE",
+          "figmaId": "146:4",
+          "width": 32,
+          "height": 32,
+          "fill": {
+            "variable": "Primary/500",
+            "variableId": "VariableID:8:8",
+            "hex": "#6366F1"
+          },
+          "cornerRadius": {
+            "variable": "radius-sm",
+            "variableId": "VariableID:8:45",
+            "value": 4
+          }
+        },
+        {
+          "name": "LogoText",
+          "type": "TEXT",
+          "figmaId": "146:5",
+          "content": "Econos",
+          "font": { "family": "Inter", "style": "Semi Bold", "size": 18 },
+          "fill": {
+            "variable": "Neutral/White",
+            "variableId": "VariableID:8:24",
+            "hex": "#FFFFFF"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Spacer1",
+      "type": "FRAME",
+      "figmaId": "147:2",
+      "layoutSizingVertical": "FILL",
+      "fill": "transparent"
+    },
+    {
+      "name": "HeroBlock",
+      "type": "FRAME",
+      "figmaId": "147:3",
+      "layout": "VERTICAL",
+      "gap": 12,
+      "maxWidth": 280,
+      "layoutSizingHorizontal": "FILL",
+      "children": [
+        {
+          "name": "Tagline",
+          "type": "TEXT",
+          "figmaId": "147:4",
+          "content": "Accounting that works for you.",
+          "font": { "family": "Inter", "style": "Semi Bold", "size": 28 },
+          "width": 280,
+          "fill": {
+            "variable": "Neutral/White",
+            "variableId": "VariableID:8:24",
+            "hex": "#FFFFFF",
+            "opacity": 1
+          }
+        },
+        {
+          "name": "SubTagline",
+          "type": "TEXT",
+          "figmaId": "147:5",
+          "content": "AI-native accounting built for Finnish businesses.",
+          "textStyle": {
+            "id": "S:97baf9ebce035b1b042a92f88288e369f0ab52ea,",
+            "name": "Type/Body-Small",
+            "size": 13,
+            "style": "Regular"
+          },
+          "fill": {
+            "color": "white",
+            "opacity": 0.6
+          },
+          "layoutSizingHorizontal": "FILL"
+        }
+      ]
+    },
+    {
+      "name": "Spacer2",
+      "type": "FRAME",
+      "figmaId": "147:6",
+      "layoutSizingVertical": "FILL",
+      "fill": "transparent"
+    },
+    {
+      "name": "QuoteCard",
+      "type": "FRAME",
+      "figmaId": "148:2",
+      "layout": "VERTICAL",
+      "gap": 12,
+      "padding": 20,
+      "layoutSizingHorizontal": "FILL",
+      "cornerRadius": {
+        "variable": "radius-lg",
+        "variableId": "VariableID:8:47",
+        "value": 12
+      },
+      "fill": { "type": "SOLID", "color": "white", "opacity": 0.07 },
+      "stroke": { "type": "SOLID", "color": "white", "opacity": 0.10, "weight": 1 },
+      "children": [
+        {
+          "name": "QuoteText",
+          "type": "TEXT",
+          "figmaId": "148:3",
+          "content": "\"Econos saved us hours every month. Our accountant loves it.\"",
+          "textStyle": {
+            "id": "S:97baf9ebce035b1b042a92f88288e369f0ab52ea,",
+            "name": "Type/Body-Small",
+            "size": 13,
+            "style": "Regular"
+          },
+          "fill": { "color": "white", "opacity": 1 },
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "name": "Author",
+          "type": "TEXT",
+          "figmaId": "148:4",
+          "content": "— Mikko Virtanen, CEO, Virtanen Oy",
+          "textStyle": {
+            "id": "S:7b845dfc0df3a28c6a90ce7ccfb03e0228cf8e32,",
+            "name": "Type/Caption",
+            "size": 11,
+            "style": "Regular"
+          },
+          "fill": { "color": "white", "opacity": 0.5 }
+        },
+        {
+          "name": "LogoPills",
+          "type": "FRAME",
+          "figmaId": "148:5",
+          "layout": "HORIZONTAL",
+          "gap": 8,
+          "children": [
+            {
+              "name": "Pill_Virtanen Oy",
+              "type": "FRAME",
+              "figmaId": "148:6",
+              "layout": "HORIZONTAL",
+              "padding": { "top": 4, "bottom": 4, "left": 10, "right": 10 },
+              "cornerRadius": {
+                "variable": "radius-sm",
+                "variableId": "VariableID:8:45",
+                "value": 4
+              },
+              "fill": { "type": "SOLID", "color": "white", "opacity": 0.15 },
+              "label": "Virtanen Oy",
+              "textStyle": "Type/Caption",
+              "textColor": "white"
+            },
+            {
+              "name": "Pill_Nordic Build",
+              "type": "FRAME",
+              "figmaId": "148:8",
+              "layout": "HORIZONTAL",
+              "padding": { "top": 4, "bottom": 4, "left": 10, "right": 10 },
+              "cornerRadius": {
+                "variable": "radius-sm",
+                "variableId": "VariableID:8:45",
+                "value": 4
+              },
+              "fill": { "type": "SOLID", "color": "white", "opacity": 0.15 },
+              "label": "Nordic Build",
+              "textStyle": "Type/Caption",
+              "textColor": "white"
+            },
+            {
+              "name": "Pill_Koski & Co",
+              "type": "FRAME",
+              "figmaId": "148:10",
+              "layout": "HORIZONTAL",
+              "padding": { "top": 4, "bottom": 4, "left": 10, "right": 10 },
+              "cornerRadius": {
+                "variable": "radius-sm",
+                "variableId": "VariableID:8:45",
+                "value": 4
+              },
+              "fill": { "type": "SOLID", "color": "white", "opacity": 0.15 },
+              "label": "Koski & Co",
+              "textStyle": "Type/Caption",
+              "textColor": "white"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

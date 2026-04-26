@@ -1,0 +1,6 @@
+dsName: "Econos"
+figmaFileKey: "RSqhYxJzRB87uMM9p4IxGx"
+kbPath: "bridge-ds"
+cron:
+  cadence: "daily"
+  time: "06:00"
