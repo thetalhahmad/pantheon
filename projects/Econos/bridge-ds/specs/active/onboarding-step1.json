@@ -1,0 +1,157 @@
+{
+  "task": "Task 7 — Onboarding Step 1: Company Info",
+  "figma": {
+    "fileKey": "RSqhYxJzRB87uMM9p4IxGx",
+    "pageId": "144:2",
+    "nodeId": "195:46",
+    "x": 11680,
+    "y": 0
+  },
+  "layout": {
+    "type": "full-width-white",
+    "description": "Full-width onboarding screen — no dark left panel. Neutral/50 background.",
+    "outerFrame": {
+      "width": 1440,
+      "height": 900,
+      "layoutMode": "VERTICAL",
+      "fill": "Neutral/50",
+      "padding": { "top": 32, "right": 32, "bottom": 32, "left": 32 },
+      "gap": 0
+    },
+    "topBar": {
+      "layoutMode": "HORIZONTAL",
+      "sizing": "FILL width",
+      "counterAxisAlignItems": "CENTER",
+      "gap": 10,
+      "paddingBottom": 32,
+      "children": [
+        { "name": "LogoMark", "type": "RECTANGLE", "size": "28×28", "fill": "Primary/500", "cornerRadius": 4 },
+        { "name": "LogoText", "characters": "Econos", "style": "Type/H4", "fill": "Neutral/900" }
+      ]
+    },
+    "contentArea": {
+      "layoutMode": "VERTICAL",
+      "sizing": "FILL width + FILL height",
+      "primaryAxisAlignItems": "CENTER",
+      "counterAxisAlignItems": "CENTER"
+    },
+    "card": {
+      "nodeId": "195:51",
+      "width": 600,
+      "layoutMode": "VERTICAL",
+      "gap": 20,
+      "padding": 40,
+      "fill": "Neutral/White",
+      "stroke": "Neutral/200",
+      "strokeWeight": 1,
+      "cornerRadius": 16
+    }
+  },
+  "cardChildren": [
+    {
+      "name": "ProgressHeader",
+      "type": "FRAME",
+      "layoutMode": "VERTICAL",
+      "gap": 8,
+      "sizing": "FILL width",
+      "children": [
+        {
+          "name": "StepLabel",
+          "type": "TEXT",
+          "characters": "Step 1 of 3",
+          "style": "Type/Label",
+          "fill": "Neutral/400"
+        },
+        {
+          "name": "ProgressBar",
+          "type": "FRAME",
+          "layoutMode": "HORIZONTAL",
+          "gap": 6,
+          "sizing": "FILL width",
+          "children": [
+            { "name": "Seg1", "height": 4, "cornerRadius": 4, "fill": "Primary/500", "sizing": "FILL horizontal" },
+            { "name": "Seg2", "height": 4, "cornerRadius": 4, "fill": "Neutral/200", "sizing": "FILL horizontal" },
+            { "name": "Seg3", "height": 4, "cornerRadius": 4, "fill": "Neutral/200", "sizing": "FILL horizontal" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Title",
+      "type": "TEXT",
+      "characters": "Tell us about your company",
+      "style": "Type/H2",
+      "fill": "Neutral/900",
+      "sizing": "FILL width"
+    },
+    {
+      "name": "Subtitle",
+      "type": "TEXT",
+      "characters": "We use this to set up your chart of accounts and compliance settings",
+      "style": "Type/Body",
+      "fill": "Neutral/500",
+      "sizing": "FILL width"
+    },
+    {
+      "name": "CompanyNameField",
+      "nodeId": "196:46",
+      "type": "FRAME (fallback form field)",
+      "label": "Company name",
+      "sizing": "FILL width"
+    },
+    {
+      "name": "BusinessIdField",
+      "nodeId": "196:50",
+      "type": "FRAME (fallback form field)",
+      "label": "Business ID (Y-tunnus)",
+      "placeholder": "1234567-8",
+      "sizing": "FILL width"
+    },
+    {
+      "name": "IndustrySelect",
+      "nodeId": "196:54",
+      "type": "FRAME (fallback select)",
+      "label": "Industry",
+      "placeholder": "Select industry",
+      "sizing": "FILL width"
+    },
+    {
+      "name": "CompanySizeSelect",
+      "nodeId": "196:58",
+      "type": "FRAME (fallback select)",
+      "label": "Company size",
+      "placeholder": "1–10 / 11–50 / 51–200 / 200+",
+      "sizing": "FILL width"
+    },
+    {
+      "name": "ContinueButton",
+      "nodeId": "196:62",
+      "type": "FRAME (fallback button)",
+      "label": "Continue",
+      "fill": "Primary/500",
+      "sizing": "FILL width"
+    }
+  ],
+  "variables": {
+    "Primary/500": "VariableID:8:8",
+    "Neutral/White": "VariableID:8:24",
+    "Neutral/50": "VariableID:8:25",
+    "Neutral/200": "VariableID:8:27",
+    "Neutral/400": "VariableID:8:29",
+    "Neutral/500": "VariableID:8:30",
+    "Neutral/800": "VariableID:8:33",
+    "Neutral/900": "VariableID:8:34"
+  },
+  "textStyles": {
+    "Type/H2": "S:d8cff896db14f4032676c86c2484265230267c67,",
+    "Type/H4": "S:55530d839f84a97e42776c6f27eb1d2d78a1a809,",
+    "Type/Body": "S:97c717422b498aeab704a7964e9f112b497da427,",
+    "Type/Label": "S:2df2643b36f14cc8953d349ae7454e310cf99efc,"
+  },
+  "componentKeys": {
+    "Button": "a22b963dc513b422e3910dfdb24cc4398d61f71c",
+    "FormField": "6d0b04753261dce26a6760e9111375552b0c0935",
+    "Select": "79a8d727ea45c6106ab35802b75a287e400e82c0"
+  },
+  "notes": "Component set imports failed at runtime — all form fields, selects, and button built as styled fallback frames with correct variable bindings. Visual output matches spec."
+}
