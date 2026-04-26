@@ -1,0 +1,106 @@
+{
+  "name": "Auth/Email Verified",
+  "description": "Email Verified screen — 1440×900 horizontal split. Left panel cloned from the shared left panel (146:2). Right section centres a 420px card confirming email verification and prompting the user to continue to company setup. Includes an auto-redirect progress bar.",
+  "figma": {
+    "fileKey": "RSqhYxJzRB87uMM9p4IxGx",
+    "pageId": "144:2",
+    "pageName": "Auth Screens",
+    "nodeId": "173:47"
+  },
+  "frame": {
+    "name": "Auth/Email Verified",
+    "width": 1440,
+    "height": 900,
+    "layoutMode": "HORIZONTAL",
+    "padding": 0,
+    "gap": 0,
+    "x": 4380,
+    "y": 0
+  },
+  "children": [
+    {
+      "name": "Left Panel (clone)",
+      "type": "FRAME",
+      "figmaId": "173:28",
+      "sourceClonedFrom": "146:2",
+      "layoutSizingVertical": "FILL",
+      "note": "Clone of shared left panel — see left-panel.json for full structure"
+    },
+    {
+      "name": "Right Panel",
+      "type": "FRAME",
+      "figmaId": "173:48",
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "CENTER",
+      "counterAxisAlignItems": "CENTER",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "FILL",
+      "fill": "Neutral/50 (VariableID:8:25)",
+      "children": [
+        {
+          "name": "Card",
+          "type": "FRAME",
+          "figmaId": "173:49",
+          "layoutMode": "VERTICAL",
+          "width": 420,
+          "layoutSizingVertical": "HUG",
+          "gap": 16,
+          "padding": 40,
+          "fill": "Neutral/White",
+          "cornerRadius": 16,
+          "stroke": "Neutral/200 (VariableID:8:27)",
+          "counterAxisAlignItems": "CENTER",
+          "children": [
+            {
+              "name": "Icon/CheckCircle",
+              "type": "FRAME",
+              "figmaId": "173:50",
+              "width": 64,
+              "height": 64,
+              "cornerRadius": 32,
+              "fill": "Semantic/Success (VariableID:8:14)",
+              "note": "Stand-in placeholder for Phosphor CheckCircle icon"
+            },
+            {
+              "name": "Heading",
+              "type": "TEXT",
+              "figmaId": "173:51",
+              "characters": "Email verified!",
+              "textStyle": "Type/H2 (S:d8cff896...)",
+              "color": "Neutral/900 (VariableID:8:34)"
+            },
+            {
+              "name": "Body",
+              "type": "TEXT",
+              "figmaId": "173:52",
+              "characters": "Your account is ready. Let's set up your company.",
+              "textStyle": "Type/Body (S:97c717422b498...)",
+              "color": "Neutral/500 (VariableID:8:30)",
+              "width": 300,
+              "textAlignHorizontal": "CENTER"
+            },
+            {
+              "name": "Button/Continue",
+              "type": "INSTANCE",
+              "figmaId": "173:53",
+              "mainComponentId": "19:11",
+              "variant": "Variant=Primary, Size=Medium, State=Default",
+              "label": "Continue to setup",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "name": "Auto-redirect Bar",
+              "type": "RECTANGLE",
+              "figmaId": "173:55",
+              "layoutSizingHorizontal": "FILL",
+              "height": 3,
+              "cornerRadius": 999,
+              "fill": "Primary/500 (VariableID:8:8)",
+              "note": "Auto-redirect progress bar — animates to indicate auto-redirect countdown"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "name": "Auth/Check Inbox",
+  "description": "Check Inbox screen — 1440×900 horizontal split. Left panel cloned from the shared left panel (146:2). Right section centres a 420px card prompting the user to check their email for a verification link.",
+  "figma": {
+    "fileKey": "RSqhYxJzRB87uMM9p4IxGx",
+    "pageId": "144:2",
+    "pageName": "Auth Screens",
+    "nodeId": "172:46"
+  },
+  "frame": {
+    "name": "Auth/Check Inbox",
+    "width": 1440,
+    "height": 900,
+    "layoutMode": "HORIZONTAL",
+    "padding": 0,
+    "gap": 0,
+    "x": 2920,
+    "y": 0
+  },
+  "children": [
+    {
+      "name": "Left Panel (clone)",
+      "type": "FRAME",
+      "figmaId": "172:27",
+      "sourceClonedFrom": "146:2",
+      "layoutSizingVertical": "FILL",
+      "note": "Clone of shared left panel — see left-panel.json for full structure"
+    },
+    {
+      "name": "Right Panel",
+      "type": "FRAME",
+      "figmaId": "172:47",
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "CENTER",
+      "counterAxisAlignItems": "CENTER",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "FILL",
+      "fill": "Neutral/50 (VariableID:8:25)",
+      "children": [
+        {
+          "name": "Card",
+          "type": "FRAME",
+          "figmaId": "172:48",
+          "layoutMode": "VERTICAL",
+          "width": 420,
+          "layoutSizingVertical": "HUG",
+          "gap": 16,
+          "padding": 40,
+          "fill": "Neutral/White",
+          "cornerRadius": 16,
+          "stroke": "Neutral/200 (VariableID:8:27)",
+          "counterAxisAlignItems": "CENTER",
+          "children": [
+            {
+              "name": "Icon/Envelope",
+              "type": "FRAME",
+              "figmaId": "172:49",
+              "width": 64,
+              "height": 64,
+              "cornerRadius": 32,
+              "fill": "Primary/500 (VariableID:8:8)",
+              "note": "Stand-in placeholder for Phosphor Envelope icon"
+            },
+            {
+              "name": "Heading",
+              "type": "TEXT",
+              "figmaId": "172:50",
+              "characters": "Check your inbox",
+              "textStyle": "Type/H2 (S:d8cff896...)",
+              "color": "Neutral/900 (VariableID:8:34)"
+            },
+            {
+              "name": "Body",
+              "type": "TEXT",
+              "figmaId": "172:51",
+              "characters": "We sent a verification link to your email. Click it to activate your account.",
+              "textStyle": "Type/Body (S:97c717422b498...)",
+              "color": "Neutral/500 (VariableID:8:30)",
+              "width": 340,
+              "textAlignHorizontal": "CENTER"
+            },
+            {
+              "name": "Button/Resend",
+              "type": "INSTANCE",
+              "figmaId": "172:52",
+              "mainComponentId": "19:38",
+              "variant": "Variant=Secondary, Size=Medium, State=Default",
+              "label": "Resend email",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "name": "Link/WrongEmail",
+              "type": "TEXT",
+              "figmaId": "172:54",
+              "characters": "Wrong email? Go back",
+              "textStyle": "Type/Body-Small (S:97baf9ebce035b1b...)",
+              "color": "Primary/500 (VariableID:8:8)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
