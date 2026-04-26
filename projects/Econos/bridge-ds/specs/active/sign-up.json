@@ -1,0 +1,207 @@
+{
+  "screen": "Auth/Sign Up",
+  "figmaFileKey": "RSqhYxJzRB87uMM9p4IxGx",
+  "figmaPageId": "144:2",
+  "figmaNodeId": "156:13",
+  "position": { "x": 1460, "y": 0 },
+  "dimensions": { "width": 1440, "height": 900 },
+  "layout": "HORIZONTAL auto-layout",
+  "createdAt": "2026-04-26",
+  "nodes": {
+    "outerFrame": {
+      "id": "156:13",
+      "name": "Auth/Sign Up",
+      "type": "FRAME",
+      "layout": "HORIZONTAL",
+      "width": 1440,
+      "height": 900
+    },
+    "leftPanel": {
+      "id": "156:14",
+      "name": "Left Panel",
+      "type": "FRAME",
+      "note": "Cloned from 146:2 (480x900 dark indigo)",
+      "width": 480,
+      "layoutSizingVertical": "FILL"
+    },
+    "rightPanel": {
+      "id": "156:33",
+      "name": "Right Panel",
+      "type": "FRAME",
+      "layout": "VERTICAL",
+      "fill": "Neutral/50 (VariableID:8:25)",
+      "primaryAxisAlignItems": "CENTER",
+      "counterAxisAlignItems": "CENTER",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "FILL"
+    },
+    "card": {
+      "id": "156:34",
+      "name": "Card",
+      "type": "FRAME",
+      "layout": "VERTICAL",
+      "width": 420,
+      "gap": 16,
+      "padding": 40,
+      "fill": "Neutral/White (VariableID:8:24)",
+      "stroke": "Neutral/200 (VariableID:8:27), 1px",
+      "cornerRadius": "radius-xl (VariableID:8:48, 16px)"
+    },
+    "cardChildren": {
+      "title": {
+        "id": "156:35",
+        "name": "Title",
+        "type": "TEXT",
+        "characters": "Create your account",
+        "textStyle": "Type/H2 (S:d8cff896db14f4032676c86c2484265230267c67)",
+        "fill": "Neutral/900 (VariableID:8:34)"
+      },
+      "subtitle": {
+        "id": "156:36",
+        "name": "Subtitle",
+        "type": "TEXT",
+        "characters": "Start your free trial — no credit card required",
+        "textStyle": "Type/Body (S:97c717422b498aeab704a7964e9f112b497da427)",
+        "fill": "Neutral/500 (VariableID:8:30)",
+        "layoutSizingHorizontal": "FILL"
+      },
+      "googleButton": {
+        "id": "160:55",
+        "name": "Google Button",
+        "type": "INSTANCE",
+        "componentSetKey": "a22b963dc513b422e3910dfdb24cc4398d61f71c",
+        "variant": "Variant=Secondary, Size=Medium, State=Default",
+        "label": "Continue with Google",
+        "layoutSizingHorizontal": "FILL"
+      },
+      "divider": {
+        "id": "160:74",
+        "name": "Divider",
+        "type": "FRAME",
+        "layout": "HORIZONTAL",
+        "layoutSizingHorizontal": "FILL",
+        "children": {
+          "line1": { "type": "RECTANGLE", "fill": "Neutral/200", "height": 1, "layoutSizingHorizontal": "FILL" },
+          "orText": { "type": "TEXT", "characters": "or", "textStyle": "Type/Body-Small", "fill": "Neutral/500" },
+          "line2": { "type": "RECTANGLE", "fill": "Neutral/200", "height": 1, "layoutSizingHorizontal": "FILL" }
+        }
+      },
+      "fullNameField": {
+        "id": "160:57",
+        "name": "Full Name Field",
+        "type": "INSTANCE",
+        "componentSetKey": "6d0b04753261dce26a6760e9111375552b0c0935",
+        "variant": "State=Default",
+        "label": "Full name",
+        "placeholder": "Talha Ahmad",
+        "layoutSizingHorizontal": "FILL"
+      },
+      "workEmailField": {
+        "id": "160:62",
+        "name": "Work Email Field",
+        "type": "INSTANCE",
+        "componentSetKey": "6d0b04753261dce26a6760e9111375552b0c0935",
+        "variant": "State=Default",
+        "label": "Work email",
+        "placeholder": "you@company.com",
+        "layoutSizingHorizontal": "FILL"
+      },
+      "passwordField": {
+        "id": "160:67",
+        "name": "Password Field",
+        "type": "INSTANCE",
+        "componentSetKey": "6d0b04753261dce26a6760e9111375552b0c0935",
+        "variant": "State=Default",
+        "label": "Password",
+        "placeholder": "••••••••",
+        "layoutSizingHorizontal": "FILL"
+      },
+      "passwordStrengthBar": {
+        "id": "160:78",
+        "name": "Password Strength Bar",
+        "type": "FRAME",
+        "layout": "HORIZONTAL",
+        "gap": 4,
+        "height": 4,
+        "layoutSizingHorizontal": "FILL",
+        "children": {
+          "seg1": {
+            "name": "Seg1",
+            "type": "RECTANGLE",
+            "fill": "Semantic/Error (VariableID:8:19, #EF4444)",
+            "cornerRadius": "radius-sm (VariableID:8:45, 4px)",
+            "state": "Weak",
+            "layoutSizingHorizontal": "FILL"
+          },
+          "seg2": {
+            "name": "Seg2",
+            "type": "RECTANGLE",
+            "fill": "Neutral/200 (VariableID:8:27)",
+            "cornerRadius": "radius-sm (VariableID:8:45, 4px)",
+            "layoutSizingHorizontal": "FILL"
+          },
+          "seg3": {
+            "name": "Seg3",
+            "type": "RECTANGLE",
+            "fill": "Neutral/200 (VariableID:8:27)",
+            "cornerRadius": "radius-sm (VariableID:8:45, 4px)",
+            "layoutSizingHorizontal": "FILL"
+          },
+          "seg4": {
+            "name": "Seg4",
+            "type": "RECTANGLE",
+            "fill": "Neutral/200 (VariableID:8:27)",
+            "cornerRadius": "radius-sm (VariableID:8:45, 4px)",
+            "layoutSizingHorizontal": "FILL"
+          }
+        }
+      },
+      "strengthLabel": {
+        "id": "160:83",
+        "name": "Strength Label",
+        "type": "TEXT",
+        "characters": "Weak",
+        "textStyle": "Type/Caption (S:7b845dfc0df3a28c6a90ce7ccfb03e0228cf8e32)",
+        "fill": "Semantic/Error (VariableID:8:19, #EF4444)"
+      },
+      "createAccountButton": {
+        "id": "160:72",
+        "name": "Create Account Button",
+        "type": "INSTANCE",
+        "componentSetKey": "a22b963dc513b422e3910dfdb24cc4398d61f71c",
+        "variant": "Variant=Primary, Size=Medium, State=Default",
+        "label": "Create Account",
+        "layoutSizingHorizontal": "FILL"
+      },
+      "signInLink": {
+        "id": "160:84",
+        "name": "Sign In Link",
+        "type": "TEXT",
+        "characters": "Already have an account? Sign in",
+        "textStyle": "Type/Body-Small (S:97baf9ebce035b1b042a92f88288e369f0ab52ea)",
+        "fill": "Neutral/500 (VariableID:8:30)"
+      },
+      "termsText": {
+        "id": "160:85",
+        "name": "Terms Text",
+        "type": "TEXT",
+        "characters": "By signing up you agree to our Terms and Privacy Policy",
+        "textStyle": "Type/Caption (S:7b845dfc0df3a28c6a90ce7ccfb03e0228cf8e32)",
+        "fill": "Neutral/400 (VariableID:8:29)"
+      }
+    }
+  },
+  "variables": {
+    "Primary/500": "VariableID:8:8",
+    "Primary/950": "VariableID:8:13",
+    "Neutral/White": "VariableID:8:24",
+    "Neutral/50": "VariableID:8:25",
+    "Neutral/200": "VariableID:8:27",
+    "Neutral/400": "VariableID:8:29",
+    "Neutral/500": "VariableID:8:30",
+    "Neutral/900": "VariableID:8:34",
+    "Semantic/Error": "VariableID:8:19",
+    "radius-xl": "VariableID:8:48",
+    "radius-sm": "VariableID:8:45"
+  }
+}
