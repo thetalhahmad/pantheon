@@ -1,0 +1,97 @@
+{
+  "type": "FRAME",
+  "name": "SidebarFirm",
+  "width": 240,
+  "fillV": true,
+  "fill": "$colour/primary/950",
+  "layout": "VERTICAL",
+  "padding": { "top": 24, "right": 16, "bottom": 24, "left": 16 },
+  "gap": 8,
+  "children": [
+    {
+      "type": "FRAME",
+      "name": "Logo",
+      "layout": "HORIZONTAL",
+      "gap": 10,
+      "counterAxisAlignItems": "CENTER",
+      "padding": { "top": 0, "right": 0, "bottom": 8, "left": 0 },
+      "children": [
+        { "type": "RECTANGLE", "name": "LogoMark", "width": 28, "height": 28, "fill": "$colour/primary/500", "cornerRadius": "$radius/radius-sm" },
+        { "type": "TEXT", "name": "LogoText", "characters": "Econos", "textStyle": "$text/label/lg/semibold", "fill": "$colour/neutral/white" }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "name": "SearchBar",
+      "layout": "HORIZONTAL",
+      "gap": 8,
+      "fillH": true,
+      "counterAxisAlignItems": "CENTER",
+      "padding": { "top": 8, "right": 10, "bottom": 8, "left": 10 },
+      "cornerRadius": "$radius/radius-sm",
+      "fill": "rgba(255,255,255,0.08)",
+      "children": [
+        { "type": "RECTANGLE", "name": "SearchIcon", "width": 14, "height": 14, "fill": "rgba(255,255,255,0.4)", "cornerRadius": "$radius/radius-pill" },
+        { "type": "TEXT", "name": "SearchPlaceholder", "characters": "Search clients, invoices…", "textStyle": "$text/label/sm/regular", "fill": "rgba(255,255,255,0.4)" }
+      ]
+    },
+    { "type": "FRAME", "name": "NavDivider", "fillH": true, "height": 1, "fill": "rgba(255,255,255,0.08)" },
+    {
+      "type": "FRAME",
+      "name": "NavItems",
+      "layout": "VERTICAL",
+      "gap": 2,
+      "fillH": true,
+      "children": [
+        {
+          "type": "FRAME", "name": "NavHome", "layout": "HORIZONTAL", "gap": 10, "fillH": true,
+          "counterAxisAlignItems": "CENTER", "padding": { "top": 10, "right": 12, "bottom": 10, "left": 12 },
+          "cornerRadius": "$radius/radius-sm", "fill": "rgba(99,102,241,0.2)",
+          "children": [
+            { "type": "RECTANGLE", "name": "ActiveBorder", "width": 3, "height": 20, "fill": "$colour/primary/500", "cornerRadius": "$radius/radius-pill" },
+            { "type": "TEXT", "name": "NavLabel", "characters": "Home", "textStyle": "$text/label/sm/medium", "fill": "$colour/neutral/white" }
+          ]
+        },
+        { "type": "FRAME", "name": "NavClients", "layout": "HORIZONTAL", "gap": 10, "fillH": true, "counterAxisAlignItems": "CENTER", "padding": { "top": 10, "right": 12, "bottom": 10, "left": 12 }, "cornerRadius": "$radius/radius-sm", "children": [{ "type": "TEXT", "name": "NavLabel", "characters": "Clients", "textStyle": "$text/label/sm/medium", "fill": "rgba(255,255,255,0.6)" }] },
+        { "type": "FRAME", "name": "NavTasks", "layout": "HORIZONTAL", "gap": 10, "fillH": true, "counterAxisAlignItems": "CENTER", "padding": { "top": 10, "right": 12, "bottom": 10, "left": 12 }, "cornerRadius": "$radius/radius-sm", "children": [{ "type": "TEXT", "name": "NavLabel", "characters": "Tasks", "textStyle": "$text/label/sm/medium", "fill": "rgba(255,255,255,0.6)" }] },
+        { "type": "FRAME", "name": "NavInvoices", "layout": "HORIZONTAL", "gap": 10, "fillH": true, "counterAxisAlignItems": "CENTER", "padding": { "top": 10, "right": 12, "bottom": 10, "left": 12 }, "cornerRadius": "$radius/radius-sm", "children": [{ "type": "TEXT", "name": "NavLabel", "characters": "Invoices", "textStyle": "$text/label/sm/medium", "fill": "rgba(255,255,255,0.6)" }] },
+        { "type": "FRAME", "name": "NavReports", "layout": "HORIZONTAL", "gap": 10, "fillH": true, "counterAxisAlignItems": "CENTER", "padding": { "top": 10, "right": 12, "bottom": 10, "left": 12 }, "cornerRadius": "$radius/radius-sm", "children": [{ "type": "TEXT", "name": "NavLabel", "characters": "Reports", "textStyle": "$text/label/sm/medium", "fill": "rgba(255,255,255,0.6)" }] },
+        { "type": "FRAME", "name": "NavSettings", "layout": "HORIZONTAL", "gap": 10, "fillH": true, "counterAxisAlignItems": "CENTER", "padding": { "top": 10, "right": 12, "bottom": 10, "left": 12 }, "cornerRadius": "$radius/radius-sm", "children": [{ "type": "TEXT", "name": "NavLabel", "characters": "Settings", "textStyle": "$text/label/sm/medium", "fill": "rgba(255,255,255,0.6)" }] }
+      ]
+    },
+    { "type": "FRAME", "name": "NavDivider2", "fillH": true, "height": 1, "fill": "rgba(255,255,255,0.08)" },
+    {
+      "type": "FRAME", "name": "RecentClients", "layout": "VERTICAL", "gap": 4, "fillH": true,
+      "children": [
+        { "type": "TEXT", "name": "RecentLabel", "characters": "RECENT", "textStyle": "$text/label/xs/regular", "fill": "rgba(255,255,255,0.4)" },
+        { "type": "FRAME", "name": "RecentClient1", "layout": "HORIZONTAL", "gap": 8, "fillH": true, "counterAxisAlignItems": "CENTER", "padding": { "top": 6, "right": 8, "bottom": 6, "left": 8 }, "cornerRadius": "$radius/radius-sm", "children": [
+          { "type": "ELLIPSE", "name": "HealthDot", "width": 8, "height": 8, "fill": "$colour/semantic/success" },
+          { "type": "TEXT", "name": "ClientName", "characters": "Virtanen Oy", "textStyle": "$text/label/sm/medium", "fill": "$colour/neutral/white" }
+        ]},
+        { "type": "FRAME", "name": "RecentClient2", "layout": "HORIZONTAL", "gap": 8, "fillH": true, "counterAxisAlignItems": "CENTER", "padding": { "top": 6, "right": 8, "bottom": 6, "left": 8 }, "cornerRadius": "$radius/radius-sm", "children": [
+          { "type": "ELLIPSE", "name": "HealthDot", "width": 8, "height": 8, "fill": "$colour/semantic/warning" },
+          { "type": "TEXT", "name": "ClientName", "characters": "Nordic Build Oy", "textStyle": "$text/label/sm/medium", "fill": "$colour/neutral/white" }
+        ]},
+        { "type": "FRAME", "name": "RecentClient3", "layout": "HORIZONTAL", "gap": 8, "fillH": true, "counterAxisAlignItems": "CENTER", "padding": { "top": 6, "right": 8, "bottom": 6, "left": 8 }, "cornerRadius": "$radius/radius-sm", "children": [
+          { "type": "ELLIPSE", "name": "HealthDot", "width": 8, "height": 8, "fill": "$colour/semantic/error" },
+          { "type": "TEXT", "name": "ClientName", "characters": "Koski & Co", "textStyle": "$text/label/sm/medium", "fill": "$colour/neutral/white" }
+        ]}
+      ]
+    },
+    { "type": "FRAME", "name": "Spacer", "layout": "VERTICAL", "fillV": true },
+    { "type": "FRAME", "name": "BottomDivider", "fillH": true, "height": 1, "fill": "rgba(255,255,255,0.08)" },
+    {
+      "type": "FRAME", "name": "UserSection", "layout": "VERTICAL", "gap": 4, "fillH": true, "padding": { "top": 8, "right": 0, "bottom": 0, "left": 0 },
+      "children": [
+        { "type": "TEXT", "name": "FirmName", "characters": "Protax Oy", "textStyle": "$text/label/sm/semibold", "fill": "$colour/neutral/white" },
+        { "type": "FRAME", "name": "UserRow", "layout": "HORIZONTAL", "gap": 8, "fillH": true, "counterAxisAlignItems": "CENTER", "children": [
+          { "type": "ELLIPSE", "name": "Avatar", "width": 32, "height": 32, "fill": "$colour/primary/500" },
+          { "type": "FRAME", "name": "UserInfo", "layout": "VERTICAL", "gap": 2, "children": [
+            { "type": "TEXT", "name": "UserName", "characters": "Kirsti Mäkinen", "textStyle": "$text/label/sm/medium", "fill": "$colour/neutral/white" },
+            { "type": "TEXT", "name": "UserRole", "characters": "Firm Admin", "textStyle": "$text/label/xs/regular", "fill": "rgba(255,255,255,0.5)" }
+          ]}
+        ]}
+      ]
+    }
+  ]
+}
