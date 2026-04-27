@@ -1,0 +1,9 @@
+{
+  "name": "Onboarding/Step 2",
+  "figmaNodeId": "201:46",
+  "description": "Accounting preferences — fiscal year month picker, VAT period pills, accounting standard (read-only), Back/Continue",
+  "page": "Auth Screens",
+  "x": 13140,
+  "width": 1440,
+  "height": 900
+}
