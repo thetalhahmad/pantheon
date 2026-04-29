@@ -1,0 +1,274 @@
+{
+  "version": "3.0",
+  "metadata": { "name": "Partner/Firm Home", "width": 1440, "height": 900, "transport": "official" },
+  "fonts": [
+    { "family": "Inter", "style": "Regular" },
+    { "family": "Inter", "style": "Medium" },
+    { "family": "Inter", "style": "Semi Bold" }
+  ],
+  "nodes": [{
+    "type": "FRAME", "name": "Partner/Firm Home", "layout": "HORIZONTAL",
+    "width": 1440, "height": 900, "fill": "$color/neutral/50",
+    "children": [
+      {
+        "type": "FRAME", "name": "SidebarFirm", "width": 240, "fillV": true,
+        "fill": "$color/primary/950", "layout": "VERTICAL",
+        "paddingTop": "$spacing/6", "paddingRight": "$spacing/4", "paddingBottom": "$spacing/6", "paddingLeft": "$spacing/4",
+        "gap": "$spacing/2",
+        "children": [
+          { "type": "FRAME", "name": "Logo", "layout": "HORIZONTAL", "gap": "$spacing/2", "counterAxisAlignItems": "CENTER", "children": [
+            { "type": "RECTANGLE", "name": "LogoMark", "width": 28, "height": 28, "fill": "$color/primary/500", "cornerRadius": "$radius/radius-sm" },
+            { "type": "TEXT", "name": "LogoText", "characters": "Econos", "textStyle": "$text/label/lg/semibold", "fill": "$color/neutral/white" }
+          ]},
+          { "type": "FRAME", "name": "SearchBar", "layout": "HORIZONTAL", "gap": "$spacing/2", "fillH": true, "counterAxisAlignItems": "CENTER",
+            "paddingTop": "$spacing/2", "paddingRight": "$spacing/2", "paddingBottom": "$spacing/2", "paddingLeft": "$spacing/2",
+            "cornerRadius": "$radius/radius-sm", "fill": "rgba(255,255,255,0.08)", "children": [
+            { "type": "RECTANGLE", "name": "SearchIcon", "width": 14, "height": 14, "fill": "rgba(255,255,255,0.4)" },
+            { "type": "TEXT", "name": "SearchPlaceholder", "characters": "Search clients, invoices...", "textStyle": "$text/label/sm/regular", "fill": "rgba(255,255,255,0.4)" }
+          ]},
+          { "type": "FRAME", "name": "NavDivider", "fillH": true, "height": 1, "fill": "rgba(255,255,255,0.08)" },
+          { "type": "FRAME", "name": "NavItems", "layout": "VERTICAL", "gap": "$spacing/1", "fillH": true, "children": [
+            { "type": "FRAME", "name": "NavHome", "layout": "HORIZONTAL", "gap": "$spacing/2", "fillH": true, "counterAxisAlignItems": "CENTER",
+              "paddingTop": "$spacing/2", "paddingRight": "$spacing/3", "paddingBottom": "$spacing/2", "paddingLeft": "$spacing/3",
+              "cornerRadius": "$radius/radius-sm", "fill": "rgba(99,102,241,0.2)", "children": [
+              { "type": "RECTANGLE", "name": "ActiveBorder", "width": 3, "height": 20, "fill": "$color/primary/500" },
+              { "type": "TEXT", "name": "NavLabel", "characters": "Home", "textStyle": "$text/label/sm/medium", "fill": "$color/neutral/white" }
+            ]},
+            { "type": "FRAME", "name": "NavClients", "layout": "HORIZONTAL", "gap": "$spacing/2", "fillH": true, "counterAxisAlignItems": "CENTER",
+              "paddingTop": "$spacing/2", "paddingRight": "$spacing/3", "paddingBottom": "$spacing/2", "paddingLeft": "$spacing/3",
+              "cornerRadius": "$radius/radius-sm", "children": [{ "type": "TEXT", "name": "NavLabel", "characters": "Clients", "textStyle": "$text/label/sm/medium", "fill": "rgba(255,255,255,0.6)" }] },
+            { "type": "FRAME", "name": "NavTasks", "layout": "HORIZONTAL", "gap": "$spacing/2", "fillH": true, "counterAxisAlignItems": "CENTER",
+              "paddingTop": "$spacing/2", "paddingRight": "$spacing/3", "paddingBottom": "$spacing/2", "paddingLeft": "$spacing/3",
+              "cornerRadius": "$radius/radius-sm", "children": [{ "type": "TEXT", "name": "NavLabel", "characters": "Tasks", "textStyle": "$text/label/sm/medium", "fill": "rgba(255,255,255,0.6)" }] },
+            { "type": "FRAME", "name": "NavInvoices", "layout": "HORIZONTAL", "gap": "$spacing/2", "fillH": true, "counterAxisAlignItems": "CENTER",
+              "paddingTop": "$spacing/2", "paddingRight": "$spacing/3", "paddingBottom": "$spacing/2", "paddingLeft": "$spacing/3",
+              "cornerRadius": "$radius/radius-sm", "children": [{ "type": "TEXT", "name": "NavLabel", "characters": "Invoices", "textStyle": "$text/label/sm/medium", "fill": "rgba(255,255,255,0.6)" }] },
+            { "type": "FRAME", "name": "NavReports", "layout": "HORIZONTAL", "gap": "$spacing/2", "fillH": true, "counterAxisAlignItems": "CENTER",
+              "paddingTop": "$spacing/2", "paddingRight": "$spacing/3", "paddingBottom": "$spacing/2", "paddingLeft": "$spacing/3",
+              "cornerRadius": "$radius/radius-sm", "children": [{ "type": "TEXT", "name": "NavLabel", "characters": "Reports", "textStyle": "$text/label/sm/medium", "fill": "rgba(255,255,255,0.6)" }] },
+            { "type": "FRAME", "name": "NavSettings", "layout": "HORIZONTAL", "gap": "$spacing/2", "fillH": true, "counterAxisAlignItems": "CENTER",
+              "paddingTop": "$spacing/2", "paddingRight": "$spacing/3", "paddingBottom": "$spacing/2", "paddingLeft": "$spacing/3",
+              "cornerRadius": "$radius/radius-sm", "children": [{ "type": "TEXT", "name": "NavLabel", "characters": "Settings", "textStyle": "$text/label/sm/medium", "fill": "rgba(255,255,255,0.6)" }] }
+          ]},
+          { "type": "FRAME", "name": "NavDivider2", "fillH": true, "height": 1, "fill": "rgba(255,255,255,0.08)" },
+          { "type": "FRAME", "name": "RecentClients", "layout": "VERTICAL", "gap": "$spacing/1", "fillH": true, "children": [
+            { "type": "TEXT", "name": "RecentLabel", "characters": "RECENT", "textStyle": "$text/label/xs/regular", "fill": "rgba(255,255,255,0.4)" },
+            { "type": "FRAME", "name": "RecentClient1", "layout": "HORIZONTAL", "gap": "$spacing/2", "fillH": true, "counterAxisAlignItems": "CENTER",
+              "paddingTop": "$spacing/2", "paddingRight": "$spacing/2", "paddingBottom": "$spacing/2", "paddingLeft": "$spacing/2",
+              "cornerRadius": "$radius/radius-sm", "children": [
+              { "type": "ELLIPSE", "name": "HealthDot", "width": 8, "height": 8, "fill": "$color/semantic/success" },
+              { "type": "TEXT", "name": "ClientName", "characters": "Virtanen Oy", "textStyle": "$text/label/sm/medium", "fill": "$color/neutral/white" }
+            ]},
+            { "type": "FRAME", "name": "RecentClient2", "layout": "HORIZONTAL", "gap": "$spacing/2", "fillH": true, "counterAxisAlignItems": "CENTER",
+              "paddingTop": "$spacing/2", "paddingRight": "$spacing/2", "paddingBottom": "$spacing/2", "paddingLeft": "$spacing/2",
+              "cornerRadius": "$radius/radius-sm", "children": [
+              { "type": "ELLIPSE", "name": "HealthDot", "width": 8, "height": 8, "fill": "$color/semantic/warning" },
+              { "type": "TEXT", "name": "ClientName", "characters": "Nordic Build Oy", "textStyle": "$text/label/sm/medium", "fill": "$color/neutral/white" }
+            ]},
+            { "type": "FRAME", "name": "RecentClient3", "layout": "HORIZONTAL", "gap": "$spacing/2", "fillH": true, "counterAxisAlignItems": "CENTER",
+              "paddingTop": "$spacing/2", "paddingRight": "$spacing/2", "paddingBottom": "$spacing/2", "paddingLeft": "$spacing/2",
+              "cornerRadius": "$radius/radius-sm", "children": [
+              { "type": "ELLIPSE", "name": "HealthDot", "width": 8, "height": 8, "fill": "$color/semantic/error" },
+              { "type": "TEXT", "name": "ClientName", "characters": "Koski & Co", "textStyle": "$text/label/sm/medium", "fill": "$color/neutral/white" }
+            ]}
+          ]},
+          { "type": "FRAME", "name": "Spacer", "layout": "VERTICAL", "fillV": true },
+          { "type": "FRAME", "name": "BottomDivider", "fillH": true, "height": 1, "fill": "rgba(255,255,255,0.08)" },
+          { "type": "FRAME", "name": "UserSection", "layout": "VERTICAL", "gap": "$spacing/1", "fillH": true,
+            "paddingTop": "$spacing/2", "paddingRight": "$spacing/1", "paddingBottom": "$spacing/1", "paddingLeft": "$spacing/1",
+            "children": [
+            { "type": "TEXT", "name": "FirmName", "characters": "Protax Oy", "textStyle": "$text/label/sm/semibold", "fill": "$color/neutral/white" },
+            { "type": "FRAME", "name": "UserRow", "layout": "HORIZONTAL", "gap": "$spacing/2", "fillH": true, "counterAxisAlignItems": "CENTER", "children": [
+              { "type": "ELLIPSE", "name": "Avatar", "width": 32, "height": 32, "fill": "$color/primary/500" },
+              { "type": "FRAME", "name": "UserInfo", "layout": "VERTICAL", "gap": "$spacing/1", "children": [
+                { "type": "TEXT", "name": "UserName", "characters": "Kirsti Makinen", "textStyle": "$text/label/sm/medium", "fill": "$color/neutral/white" },
+                { "type": "TEXT", "name": "UserRole", "characters": "Firm Admin", "textStyle": "$text/label/xs/regular", "fill": "rgba(255,255,255,0.5)" }
+              ]}
+            ]}
+          ]}
+        ]
+      },
+      {
+        "type": "FRAME", "name": "MainContent", "fillH": true, "fillV": true,
+        "layout": "VERTICAL", "gap": "$spacing/6",
+        "paddingTop": "$spacing/8", "paddingRight": "$spacing/8", "paddingBottom": "$spacing/8", "paddingLeft": "$spacing/8",
+        "fill": "$color/neutral/50",
+        "children": [
+          {
+            "type": "FRAME", "name": "Header", "layout": "HORIZONTAL", "fillH": true, "counterAxisAlignItems": "CENTER",
+            "children": [
+              { "type": "FRAME", "name": "HeaderLeft", "layout": "VERTICAL", "gap": "$spacing/1", "fillH": true, "children": [
+                { "type": "TEXT", "name": "Greeting", "characters": "Good morning, Kirsti.", "textStyle": "$text/heading/2/semibold", "fill": "$color/neutral/900" },
+                { "type": "TEXT", "name": "Subtitle", "characters": "12 items need your attention today", "textStyle": "$text/body/md/regular", "fill": "$color/neutral/500" }
+              ]},
+              { "type": "FRAME", "name": "NotificationBell", "layout": "HORIZONTAL", "width": 40, "height": 40,
+                "cornerRadius": "$radius/radius-sm", "fill": "$color/neutral/white",
+                "counterAxisAlignItems": "CENTER", "primaryAxisAlignItems": "CENTER", "children": [
+                { "type": "TEXT", "name": "BellIcon", "characters": "Bell", "textStyle": "$text/label/sm/regular", "fill": "$color/neutral/500" }
+              ]}
+            ]
+          },
+          {
+            "type": "FRAME", "name": "KPIStrip", "layout": "HORIZONTAL", "fillH": true, "gap": "$spacing/4",
+            "children": [
+              { "type": "FRAME", "name": "KPI-ActiveClients", "layout": "VERTICAL", "gap": "$spacing/2", "fillH": true,
+                "paddingTop": "$spacing/4", "paddingRight": "$spacing/6", "paddingBottom": "$spacing/4", "paddingLeft": "$spacing/4",
+                "fill": "$color/neutral/white", "cornerRadius": "$radius/radius-lg", "children": [
+                { "type": "TEXT", "name": "KPILabel", "characters": "Active Clients", "textStyle": "$text/label/sm/medium", "fill": "$color/neutral/500" },
+                { "type": "TEXT", "name": "KPIValue", "characters": "34", "textStyle": "$text/heading/2/semibold", "fill": "$color/neutral/900" },
+                { "type": "TEXT", "name": "KPITrend", "characters": "2 this month", "textStyle": "$text/label/xs/regular", "fill": "$color/semantic/success" }
+              ]},
+              { "type": "FRAME", "name": "KPI-PendingActions", "layout": "VERTICAL", "gap": "$spacing/2", "fillH": true,
+                "paddingTop": "$spacing/4", "paddingRight": "$spacing/6", "paddingBottom": "$spacing/4", "paddingLeft": "$spacing/4",
+                "fill": "$color/neutral/white", "cornerRadius": "$radius/radius-lg", "children": [
+                { "type": "TEXT", "name": "KPILabel", "characters": "Pending Actions", "textStyle": "$text/label/sm/medium", "fill": "$color/neutral/500" },
+                { "type": "TEXT", "name": "KPIValue", "characters": "12", "textStyle": "$text/heading/2/semibold", "fill": "$color/neutral/900" },
+                { "type": "TEXT", "name": "KPITrend", "characters": "3 from yesterday", "textStyle": "$text/label/xs/regular", "fill": "$color/semantic/success" }
+              ]},
+              { "type": "FRAME", "name": "KPI-VATDeadlines", "layout": "VERTICAL", "gap": "$spacing/2", "fillH": true,
+                "paddingTop": "$spacing/4", "paddingRight": "$spacing/6", "paddingBottom": "$spacing/4", "paddingLeft": "$spacing/4",
+                "fill": "$color/neutral/white", "cornerRadius": "$radius/radius-lg", "children": [
+                { "type": "TEXT", "name": "KPILabel", "characters": "VAT Deadlines (7 days)", "textStyle": "$text/label/sm/medium", "fill": "$color/neutral/500" },
+                { "type": "TEXT", "name": "KPIValue", "characters": "3", "textStyle": "$text/heading/2/semibold", "fill": "$color/semantic/error" },
+                { "type": "TEXT", "name": "KPITrend", "characters": "Needs attention", "textStyle": "$text/label/xs/regular", "fill": "$color/semantic/error" }
+              ]},
+              { "type": "FRAME", "name": "KPI-Unreconciled", "layout": "VERTICAL", "gap": "$spacing/2", "fillH": true,
+                "paddingTop": "$spacing/4", "paddingRight": "$spacing/6", "paddingBottom": "$spacing/4", "paddingLeft": "$spacing/4",
+                "fill": "$color/neutral/white", "cornerRadius": "$radius/radius-lg", "children": [
+                { "type": "TEXT", "name": "KPILabel", "characters": "Unreconciled Statements", "textStyle": "$text/label/sm/medium", "fill": "$color/neutral/500" },
+                { "type": "TEXT", "name": "KPIValue", "characters": "7", "textStyle": "$text/heading/2/semibold", "fill": "$color/neutral/900" },
+                { "type": "TEXT", "name": "KPITrend", "characters": "2 from yesterday", "textStyle": "$text/label/xs/regular", "fill": "$color/semantic/error" }
+              ]}
+            ]
+          },
+          {
+            "type": "FRAME", "name": "TwoColumn", "layout": "HORIZONTAL", "fillH": true, "fillV": true, "gap": "$spacing/6",
+            "children": [
+              {
+                "type": "FRAME", "name": "ClientGrid", "layout": "VERTICAL", "gap": "$spacing/4", "fillH": true, "fillV": true,
+                "paddingTop": "$spacing/4", "paddingRight": "$spacing/6", "paddingBottom": "$spacing/4", "paddingLeft": "$spacing/6",
+                "fill": "$color/neutral/white", "cornerRadius": "$radius/radius-lg",
+                "children": [
+                  { "type": "FRAME", "name": "GridHeader", "layout": "HORIZONTAL", "fillH": true, "counterAxisAlignItems": "CENTER", "children": [
+                    { "type": "TEXT", "name": "GridTitle", "characters": "All Clients", "textStyle": "$text/label/lg/semibold", "fill": "$color/neutral/900", "fillH": true }
+                  ]},
+                  { "type": "FRAME", "name": "TableHeader", "layout": "HORIZONTAL", "fillH": true,
+                    "paddingTop": "$spacing/2", "paddingRight": "$spacing/1", "paddingBottom": "$spacing/2", "paddingLeft": "$spacing/1",
+                    "children": [
+                    { "type": "TEXT", "name": "ColCompany", "characters": "Company", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/400", "width": 200 },
+                    { "type": "TEXT", "name": "ColHealth", "characters": "Health", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/400", "width": 160 },
+                    { "type": "TEXT", "name": "ColAccountant", "characters": "Accountant", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/400", "width": 120 },
+                    { "type": "TEXT", "name": "ColPending", "characters": "Pending", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/400", "width": 80 },
+                    { "type": "TEXT", "name": "ColActivity", "characters": "Last activity", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/400", "fillH": true }
+                  ]},
+                  { "type": "FRAME", "name": "ClientRow1", "layout": "HORIZONTAL", "fillH": true, "counterAxisAlignItems": "CENTER",
+                    "paddingTop": "$spacing/3", "paddingRight": "$spacing/1", "paddingBottom": "$spacing/3", "paddingLeft": "$spacing/1",
+                    "children": [
+                    { "type": "FRAME", "name": "CompanyCell", "layout": "VERTICAL", "gap": "$spacing/1", "width": 200, "children": [
+                      { "type": "TEXT", "name": "CompanyName", "characters": "Koski and Co Oy", "textStyle": "$text/label/sm/medium", "fill": "$color/neutral/900" },
+                      { "type": "TEXT", "name": "YTunnus", "characters": "7654321-0", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/400" }
+                    ]},
+                    { "type": "FRAME", "name": "HealthCell", "layout": "HORIZONTAL", "gap": "$spacing/2", "width": 160, "counterAxisAlignItems": "CENTER", "children": [
+                      { "type": "ELLIPSE", "name": "HealthDot", "width": 8, "height": 8, "fill": "$color/semantic/error" },
+                      { "type": "TEXT", "name": "HealthReason", "characters": "VAT overdue", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/500" }
+                    ]},
+                    { "type": "TEXT", "name": "AccountantCell", "characters": "Pekka M.", "textStyle": "$text/label/sm/regular", "fill": "$color/neutral/600", "width": 120 },
+                    { "type": "FRAME", "name": "PendingCell", "layout": "HORIZONTAL", "width": 80, "children": [
+                      { "type": "FRAME", "name": "Badge", "layout": "HORIZONTAL",
+                        "paddingTop": "$spacing/1", "paddingRight": "$spacing/2", "paddingBottom": "$spacing/1", "paddingLeft": "$spacing/2",
+                        "cornerRadius": "$radius/radius-pill", "fill": "$color/semantic/error", "children": [
+                        { "type": "TEXT", "name": "BadgeCount", "characters": "5", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/white" }
+                      ]}
+                    ]},
+                    { "type": "TEXT", "name": "ActivityCell", "characters": "2 hours ago", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/400", "fillH": true }
+                  ]},
+                  { "type": "FRAME", "name": "ClientRow2", "layout": "HORIZONTAL", "fillH": true, "counterAxisAlignItems": "CENTER",
+                    "paddingTop": "$spacing/3", "paddingRight": "$spacing/1", "paddingBottom": "$spacing/3", "paddingLeft": "$spacing/1",
+                    "children": [
+                    { "type": "FRAME", "name": "CompanyCell", "layout": "VERTICAL", "gap": "$spacing/1", "width": 200, "children": [
+                      { "type": "TEXT", "name": "CompanyName", "characters": "Nordic Build Oy", "textStyle": "$text/label/sm/medium", "fill": "$color/neutral/900" },
+                      { "type": "TEXT", "name": "YTunnus", "characters": "2345678-9", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/400" }
+                    ]},
+                    { "type": "FRAME", "name": "HealthCell", "layout": "HORIZONTAL", "gap": "$spacing/2", "width": 160, "counterAxisAlignItems": "CENTER", "children": [
+                      { "type": "ELLIPSE", "name": "HealthDot", "width": 8, "height": 8, "fill": "$color/semantic/warning" },
+                      { "type": "TEXT", "name": "HealthReason", "characters": "Bank unreconciled", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/500" }
+                    ]},
+                    { "type": "TEXT", "name": "AccountantCell", "characters": "Kirsti M.", "textStyle": "$text/label/sm/regular", "fill": "$color/neutral/600", "width": 120 },
+                    { "type": "FRAME", "name": "PendingCell", "layout": "HORIZONTAL", "width": 80, "children": [
+                      { "type": "FRAME", "name": "Badge", "layout": "HORIZONTAL",
+                        "paddingTop": "$spacing/1", "paddingRight": "$spacing/2", "paddingBottom": "$spacing/1", "paddingLeft": "$spacing/2",
+                        "cornerRadius": "$radius/radius-pill", "fill": "$color/semantic/warning", "children": [
+                        { "type": "TEXT", "name": "BadgeCount", "characters": "2", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/white" }
+                      ]}
+                    ]},
+                    { "type": "TEXT", "name": "ActivityCell", "characters": "Yesterday", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/400", "fillH": true }
+                  ]},
+                  { "type": "FRAME", "name": "ClientRow3", "layout": "HORIZONTAL", "fillH": true, "counterAxisAlignItems": "CENTER",
+                    "paddingTop": "$spacing/3", "paddingRight": "$spacing/1", "paddingBottom": "$spacing/3", "paddingLeft": "$spacing/1",
+                    "children": [
+                    { "type": "FRAME", "name": "CompanyCell", "layout": "VERTICAL", "gap": "$spacing/1", "width": 200, "children": [
+                      { "type": "TEXT", "name": "CompanyName", "characters": "Virtanen Oy", "textStyle": "$text/label/sm/medium", "fill": "$color/neutral/900" },
+                      { "type": "TEXT", "name": "YTunnus", "characters": "1234567-8", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/400" }
+                    ]},
+                    { "type": "FRAME", "name": "HealthCell", "layout": "HORIZONTAL", "gap": "$spacing/2", "width": 160, "counterAxisAlignItems": "CENTER", "children": [
+                      { "type": "ELLIPSE", "name": "HealthDot", "width": 8, "height": 8, "fill": "$color/semantic/success" },
+                      { "type": "TEXT", "name": "HealthReason", "characters": "All clear", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/500" }
+                    ]},
+                    { "type": "TEXT", "name": "AccountantCell", "characters": "Pekka M.", "textStyle": "$text/label/sm/regular", "fill": "$color/neutral/600", "width": 120 },
+                    { "type": "TEXT", "name": "PendingCell", "characters": "No pending", "textStyle": "$text/label/sm/regular", "fill": "$color/neutral/400", "width": 80 },
+                    { "type": "TEXT", "name": "ActivityCell", "characters": "3 days ago", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/400", "fillH": true }
+                  ]}
+                ]
+              },
+              {
+                "type": "FRAME", "name": "PriorityFeed", "layout": "VERTICAL", "gap": "$spacing/4",
+                "width": 320, "fillV": true,
+                "paddingTop": "$spacing/4", "paddingRight": "$spacing/6", "paddingBottom": "$spacing/4", "paddingLeft": "$spacing/6",
+                "fill": "$color/neutral/white", "cornerRadius": "$radius/radius-lg",
+                "children": [
+                  { "type": "TEXT", "name": "FeedTitle", "characters": "Priority Feed", "textStyle": "$text/label/lg/semibold", "fill": "$color/neutral/900" },
+                  { "type": "TEXT", "name": "OverdueLabel", "characters": "OVERDUE", "textStyle": "$text/label/xs/regular", "fill": "$color/semantic/error" },
+                  { "type": "FRAME", "name": "FeedItem1", "layout": "VERTICAL", "gap": "$spacing/1", "fillH": true,
+                    "paddingTop": "$spacing/3", "paddingRight": "$spacing/1", "paddingBottom": "$spacing/3", "paddingLeft": "$spacing/1",
+                    "children": [
+                    { "type": "FRAME", "name": "ClientPill", "layout": "HORIZONTAL",
+                      "paddingTop": "$spacing/1", "paddingRight": "$spacing/2", "paddingBottom": "$spacing/1", "paddingLeft": "$spacing/2",
+                      "cornerRadius": "$radius/radius-pill", "fill": "$color/primary/50", "children": [
+                      { "type": "TEXT", "name": "PillLabel", "characters": "Koski and Co", "textStyle": "$text/label/xs/medium", "fill": "$color/primary/500" }
+                    ]},
+                    { "type": "TEXT", "name": "ActionText", "characters": "VAT return overdue - file immediately", "textStyle": "$text/body/sm/regular", "fill": "$color/neutral/900" },
+                    { "type": "TEXT", "name": "DueDate", "characters": "Was due Apr 25", "textStyle": "$text/label/xs/regular", "fill": "$color/semantic/error" }
+                  ]},
+                  { "type": "TEXT", "name": "TodayLabel", "characters": "DUE TODAY", "textStyle": "$text/label/xs/regular", "fill": "$color/semantic/warning" },
+                  { "type": "FRAME", "name": "FeedItem2", "layout": "VERTICAL", "gap": "$spacing/1", "fillH": true,
+                    "paddingTop": "$spacing/3", "paddingRight": "$spacing/1", "paddingBottom": "$spacing/3", "paddingLeft": "$spacing/1",
+                    "children": [
+                    { "type": "FRAME", "name": "ClientPill", "layout": "HORIZONTAL",
+                      "paddingTop": "$spacing/1", "paddingRight": "$spacing/2", "paddingBottom": "$spacing/1", "paddingLeft": "$spacing/2",
+                      "cornerRadius": "$radius/radius-pill", "fill": "$color/primary/50", "children": [
+                      { "type": "TEXT", "name": "PillLabel", "characters": "Nordic Build", "textStyle": "$text/label/xs/medium", "fill": "$color/primary/500" }
+                    ]},
+                    { "type": "TEXT", "name": "ActionText", "characters": "Reconcile April bank statement", "textStyle": "$text/body/sm/regular", "fill": "$color/neutral/900" },
+                    { "type": "TEXT", "name": "DueDate", "characters": "Due today", "textStyle": "$text/label/xs/regular", "fill": "$color/semantic/warning" }
+                  ]},
+                  { "type": "TEXT", "name": "WeekLabel", "characters": "DUE THIS WEEK", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/400" },
+                  { "type": "FRAME", "name": "FeedItem3", "layout": "VERTICAL", "gap": "$spacing/1", "fillH": true,
+                    "paddingTop": "$spacing/3", "paddingRight": "$spacing/1", "paddingBottom": "$spacing/3", "paddingLeft": "$spacing/1",
+                    "children": [
+                    { "type": "FRAME", "name": "ClientPill", "layout": "HORIZONTAL",
+                      "paddingTop": "$spacing/1", "paddingRight": "$spacing/2", "paddingBottom": "$spacing/1", "paddingLeft": "$spacing/2",
+                      "cornerRadius": "$radius/radius-pill", "fill": "$color/primary/50", "children": [
+                      { "type": "TEXT", "name": "PillLabel", "characters": "Virtanen Oy", "textStyle": "$text/label/xs/medium", "fill": "$color/primary/500" }
+                    ]},
+                    { "type": "TEXT", "name": "ActionText", "characters": "Q1 financial report to client", "textStyle": "$text/body/sm/regular", "fill": "$color/neutral/900" },
+                    { "type": "TEXT", "name": "DueDate", "characters": "Due Apr 30", "textStyle": "$text/label/xs/regular", "fill": "$color/neutral/400" }
+                  ]}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }]
+}
