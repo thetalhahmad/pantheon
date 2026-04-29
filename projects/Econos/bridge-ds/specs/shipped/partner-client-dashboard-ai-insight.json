@@ -1,0 +1,50 @@
+{
+  "name": "Partner/Client Dashboard — AI Insight Active",
+  "type": "frame",
+  "width": 1440,
+  "height": 900,
+  "note": "Clone of Partner/Client Dashboard with AIInsightPanel floating over the cash flow chart area. Panel uses dark indigo fill, drop shadow, and absolute positioning within the root frame.",
+  "figmaNodeId": "295:2",
+  "built": "2026-04-29",
+  "method": "direct-execution",
+  "baseFrame": "Partner/Client Dashboard (294:2)",
+  "additions": [
+    {
+      "name": "AIInsightPanel",
+      "type": "frame",
+      "fill": "$colour/primary/950",
+      "cornerRadius": 12,
+      "width": 340,
+      "position": { "x": 560, "y": 220 },
+      "layoutPositioning": "ABSOLUTE",
+      "shadow": { "type": "DROP_SHADOW", "color": "rgba(0,0,0,0.25)", "offset": "0 8", "radius": 24 },
+      "children": [
+        {
+          "name": "InsightHeader",
+          "children": [
+            { "name": "AIBadge", "text": "AI Insight", "fill": "$colour/primary/500", "style": "Type/Caption" },
+            { "name": "CloseBtn", "text": "✕", "color": "$colour/neutral/400" }
+          ]
+        },
+        { "name": "InsightTitle", "text": "Cash flow risk detected", "style": "Type/H4", "color": "white" },
+        { "name": "InsightBody", "text": "Based on current open invoices and scheduled expenses, Virtanen Oy may face a €3,200 shortfall in late May if Invoice #1041 remains unpaid.", "color": "$colour/neutral/400" },
+        {
+          "name": "ConfidenceRow",
+          "children": [
+            { "name": "ConfidenceLabel", "text": "Confidence:" },
+            { "name": "ConfBarBg", "width": 100, "height": 6, "fill": "$colour/neutral/600", "cornerRadius": 3,
+              "children": [{ "name": "ConfBarFill", "width": 78, "fill": "$colour/primary/500", "cornerRadius": 3 }] },
+            { "name": "ConfidencePct", "text": "78%", "color": "$colour/primary/500" }
+          ]
+        },
+        {
+          "name": "CTARow",
+          "children": [
+            { "name": "PrimaryAction",   "text": "Send reminder", "fill": "$colour/primary/500", "color": "white" },
+            { "name": "SecondaryAction", "text": "View invoice",  "fill": "none",                "color": "$colour/neutral/400" }
+          ]
+        }
+      ]
+    }
+  ]
+}

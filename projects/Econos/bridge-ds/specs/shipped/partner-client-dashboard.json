@@ -1,0 +1,123 @@
+{
+  "name": "Partner/Client Dashboard",
+  "type": "frame",
+  "width": 1440,
+  "height": 900,
+  "layout": "HORIZONTAL",
+  "fill": "$colour/neutral/50",
+  "note": "Client-context view after drilling into a specific client. Client-mode sidebar with back nav, financial KPIs, cash flow bar chart with AI forecast bands, invoice pipeline stages, and transaction feed with unreconciled flagging.",
+  "figmaNodeId": "294:2",
+  "built": "2026-04-29",
+  "method": "direct-execution",
+  "children": [
+    {
+      "name": "SidebarClient",
+      "width": 240,
+      "fill": "$colour/primary/950",
+      "children": [
+        { "name": "BackRow", "text": "← All Clients", "color": "$colour/neutral/400" },
+        {
+          "name": "ClientIdentity",
+          "children": [
+            { "name": "ClientName", "text": "Virtanen Oy", "style": "Type/H4" },
+            { "name": "YTunnus", "text": "Y-tunnus: 1234567-8" },
+            { "name": "HealthBadge", "dot": "$colour/semantic/success", "text": "All clear" }
+          ]
+        },
+        { "name": "Divider" },
+        {
+          "name": "ClientNav",
+          "items": ["Overview (active)", "Invoices", "Purchases", "Bank", "VAT", "Payroll", "Reports"]
+        },
+        { "name": "Spacer" },
+        { "name": "UserSection", "children": ["FirmName (Protax Oy)", "UserRow (Avatar + Kirsti Makinen / Firm Admin)"] }
+      ]
+    },
+    {
+      "name": "MainContent",
+      "fill": "$colour/neutral/50",
+      "children": [
+        {
+          "name": "Header",
+          "children": [
+            { "name": "PageTitle", "text": "Virtanen Oy — Overview", "style": "Type/H2" },
+            { "name": "LastUpdated", "text": "Last updated: 2 hours ago" }
+          ]
+        },
+        {
+          "name": "FinancialKPIs",
+          "children": [
+            { "name": "KPI-Revenue",     "label": "Monthly Revenue",      "value": "€12,400", "trend": "+8% vs last month",  "trendColor": "$colour/semantic/success" },
+            { "name": "KPI-Expenses",    "label": "Monthly Expenses",     "value": "€8,200",  "trend": "-3% vs last month",  "trendColor": "$colour/semantic/success" },
+            { "name": "KPI-CashBalance", "label": "Cash Balance",         "value": "€24,100", "trend": "Stable" },
+            { "name": "KPI-OpenInvoices","label": "Open Invoices",        "value": "€6,800",  "trend": "3 invoices pending", "trendColor": "$colour/semantic/warning", "valueColor": "$colour/semantic/warning" }
+          ]
+        },
+        {
+          "name": "TwoColumn",
+          "children": [
+            {
+              "name": "LeftColumn",
+              "children": [
+                {
+                  "name": "CashFlowCard",
+                  "children": [
+                    { "name": "ChartTitle", "text": "Cash Flow — Last 6 Months" },
+                    { "name": "AIForecastTag", "text": "AI Forecast", "fill": "$colour/primary/50" },
+                    {
+                      "name": "ChartArea",
+                      "bars": [
+                        { "month": "Nov", "height": 80, "type": "actual" },
+                        { "month": "Dec", "height": 60, "type": "actual" },
+                        { "month": "Jan", "height": 100, "type": "actual" },
+                        { "month": "Feb", "height": 75, "type": "actual" },
+                        { "month": "Mar", "height": 110, "type": "actual" },
+                        { "month": "Apr", "height": 90, "type": "actual" },
+                        { "month": "May", "height": 100, "type": "ai-forecast", "opacity": 0.35 },
+                        { "month": "Jun", "height": 115, "type": "ai-forecast", "opacity": 0.35 }
+                      ]
+                    },
+                    { "name": "ChartLegend", "items": ["Actual ($colour/primary/500)", "AI Forecast (opacity 0.35)"] }
+                  ]
+                },
+                {
+                  "name": "InvoicePipeline",
+                  "children": [
+                    { "name": "PipelineTitle", "text": "Invoice Pipeline" },
+                    {
+                      "name": "PipelineStages",
+                      "stages": [
+                        { "label": "Draft",   "amount": "€2,100", "count": "2", "fill": "$colour/neutral/100" },
+                        { "label": "Sent",    "amount": "€4,700", "count": "3", "fill": "$colour/primary/50" },
+                        { "label": "Overdue", "amount": "€2,000", "count": "1", "fill": "$colour/semantic/error" },
+                        { "label": "Paid",    "amount": "€8,400", "count": "5", "fill": "$colour/semantic/success" }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "TransactionFeed",
+              "width": 320,
+              "children": [
+                { "name": "TxTitle", "text": "Recent Transactions" },
+                { "name": "UnreconciledBadge", "text": "2 unreconciled", "fill": "$colour/semantic/warning" },
+                {
+                  "name": "Transactions",
+                  "items": [
+                    { "desc": "Rakennustarvike Oy — Invoice #1042", "amount": "+€4,200", "color": "$colour/semantic/success", "date": "Apr 28 · Bank receipt" },
+                    { "desc": "Office lease — April",                "amount": "-€1,800", "color": "$colour/semantic/error",   "date": "Apr 27 · Bank debit" },
+                    { "desc": "Subcontractor payment",               "amount": "-€2,100", "color": "$colour/semantic/error",   "date": "Apr 26 · Bank debit · ⚠ Unreconciled" },
+                    { "desc": "Consulting Invoice #1041",             "amount": "+€3,500", "color": "$colour/semantic/success", "date": "Apr 25 · Bank receipt" },
+                    { "desc": "Software subscription",               "amount": "-€299",   "color": "$colour/semantic/error",   "date": "Apr 24 · Card · ⚠ Unreconciled" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

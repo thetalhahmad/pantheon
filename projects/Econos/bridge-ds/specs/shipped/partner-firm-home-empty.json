@@ -1,0 +1,81 @@
+{
+  "name": "Partner/Firm Home — Empty State",
+  "type": "frame",
+  "width": 1440,
+  "height": 900,
+  "layout": "HORIZONTAL",
+  "fill": "$colour/neutral/50",
+  "note": "Empty state for new firms with no clients yet. Same sidebar structure as Firm Home, but main content shows zeroed KPIs and an onboarding CTA card.",
+  "figmaNodeId": "293:2",
+  "built": "2026-04-29",
+  "method": "direct-execution",
+  "children": [
+    {
+      "name": "SidebarFirm",
+      "type": "frame",
+      "width": 240,
+      "fill": "$colour/primary/950",
+      "children": [
+        { "name": "Logo", "children": ["LogoMark ($colour/primary/500, 28×28)", "LogoText (Econos, Type/H4, white)"] },
+        { "name": "SearchBar", "placeholder": "Search clients, invoices..." },
+        { "name": "NavItems", "items": ["Home (active)", "Clients", "Tasks", "Invoices", "Reports", "Settings"] },
+        { "name": "Spacer" },
+        { "name": "NoClientsNote", "text": "No clients yet", "color": "$colour/neutral/400" },
+        { "name": "UserSection", "children": ["FirmName (Protax Oy)", "UserRow (Avatar + Kirsti Makinen / Firm Admin)"] }
+      ]
+    },
+    {
+      "name": "MainContent",
+      "fill": "$colour/neutral/50",
+      "children": [
+        {
+          "name": "Header",
+          "children": [
+            { "name": "Greeting", "text": "Welcome to Econos, Kirsti.", "style": "Type/H2" },
+            { "name": "Subtitle", "text": "Add your first client to get started.", "style": "Type/Body" }
+          ]
+        },
+        {
+          "name": "KPIStrip",
+          "children": [
+            { "name": "KPI-ActiveClients",   "label": "Active Clients",          "value": "0", "trend": "Add your first client" },
+            { "name": "KPI-PendingActions",  "label": "Pending Actions",         "value": "0", "trend": "Nothing yet" },
+            { "name": "KPI-VATDeadlines",    "label": "VAT Deadlines (7d)",      "value": "0", "trend": "All clear", "trendColor": "$colour/semantic/success" },
+            { "name": "KPI-Unreconciled",    "label": "Unreconciled Statements", "value": "0", "trend": "Nothing yet" }
+          ]
+        },
+        {
+          "name": "TwoColumn",
+          "children": [
+            {
+              "name": "ClientGrid",
+              "children": [
+                { "name": "GridTitle", "text": "All Clients" },
+                {
+                  "name": "EmptyState",
+                  "children": [
+                    { "name": "Illustration", "fill": "$colour/primary/50", "cornerRadius": 40 },
+                    { "name": "EmptyTitle", "text": "No clients added yet", "style": "Type/H4" },
+                    { "name": "EmptyDesc", "text": "Start by adding your first client..." },
+                    { "name": "CTAButton", "text": "+ Add first client", "fill": "$colour/primary/500" }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "PriorityFeed",
+              "width": 320,
+              "children": [
+                { "name": "FeedTitle", "text": "Priority Feed" },
+                { "name": "FeedEmpty", "children": [
+                  { "name": "FeedEmptyTitle", "text": "Nothing to do yet" },
+                  { "name": "FeedEmptyDesc", "text": "Your priority tasks and deadlines will appear here once you have active clients." }
+                ]}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

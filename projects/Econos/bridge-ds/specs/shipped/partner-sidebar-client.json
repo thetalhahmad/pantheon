@@ -1,0 +1,59 @@
+{
+  "type": "FRAME",
+  "name": "SidebarClient",
+  "width": 240,
+  "fillV": true,
+  "fill": "$colour/primary/950",
+  "layout": "VERTICAL",
+  "padding": { "top": 24, "right": 16, "bottom": 24, "left": 16 },
+  "gap": 8,
+  "children": [
+    {
+      "type": "FRAME", "name": "BackRow", "layout": "HORIZONTAL", "gap": 6, "fillH": true,
+      "counterAxisAlignItems": "CENTER", "padding": { "top": 0, "right": 0, "bottom": 4, "left": 0 },
+      "children": [
+        { "type": "TEXT", "name": "BackArrow", "characters": "←", "textStyle": "$text/label/sm/regular", "fill": "rgba(255,255,255,0.6)" },
+        { "type": "TEXT", "name": "BackLabel", "characters": "Back to firm", "textStyle": "$text/label/sm/regular", "fill": "rgba(255,255,255,0.6)" }
+      ]
+    },
+    {
+      "type": "FRAME", "name": "ClientHeader", "layout": "VERTICAL", "gap": 4, "fillH": true,
+      "padding": { "top": 0, "right": 0, "bottom": 12, "left": 0 },
+      "children": [
+        { "type": "TEXT", "name": "ClientName", "characters": "Virtanen Oy", "textStyle": "$text/heading/sm/semibold", "fill": "$colour/neutral/white" },
+        { "type": "TEXT", "name": "ClientYTunnus", "characters": "1234567-8", "textStyle": "$text/label/xs/regular", "fill": "rgba(255,255,255,0.5)" }
+      ]
+    },
+    { "type": "FRAME", "name": "NavDivider", "fillH": true, "height": 1, "fill": "rgba(255,255,255,0.08)" },
+    {
+      "type": "FRAME", "name": "ClientNavItems", "layout": "VERTICAL", "gap": 2, "fillH": true,
+      "children": [
+        { "type": "FRAME", "name": "NavOverview", "layout": "HORIZONTAL", "gap": 10, "fillH": true, "counterAxisAlignItems": "CENTER", "padding": { "top": 10, "right": 12, "bottom": 10, "left": 12 }, "cornerRadius": "$radius/radius-sm", "fill": "rgba(99,102,241,0.2)", "children": [
+          { "type": "RECTANGLE", "name": "ActiveBorder", "width": 3, "height": 20, "fill": "$colour/primary/500", "cornerRadius": "$radius/radius-pill" },
+          { "type": "TEXT", "name": "NavLabel", "characters": "Overview", "textStyle": "$text/label/sm/medium", "fill": "$colour/neutral/white" }
+        ]},
+        { "type": "FRAME", "name": "NavInvoices", "layout": "HORIZONTAL", "gap": 10, "fillH": true, "counterAxisAlignItems": "CENTER", "padding": { "top": 10, "right": 12, "bottom": 10, "left": 12 }, "cornerRadius": "$radius/radius-sm", "children": [{ "type": "TEXT", "name": "NavLabel", "characters": "Invoices", "textStyle": "$text/label/sm/medium", "fill": "rgba(255,255,255,0.6)" }] },
+        { "type": "FRAME", "name": "NavPurchases", "layout": "HORIZONTAL", "gap": 10, "fillH": true, "counterAxisAlignItems": "CENTER", "padding": { "top": 10, "right": 12, "bottom": 10, "left": 12 }, "cornerRadius": "$radius/radius-sm", "children": [{ "type": "TEXT", "name": "NavLabel", "characters": "Purchases", "textStyle": "$text/label/sm/medium", "fill": "rgba(255,255,255,0.6)" }] },
+        { "type": "FRAME", "name": "NavBank", "layout": "HORIZONTAL", "gap": 10, "fillH": true, "counterAxisAlignItems": "CENTER", "padding": { "top": 10, "right": 12, "bottom": 10, "left": 12 }, "cornerRadius": "$radius/radius-sm", "children": [{ "type": "TEXT", "name": "NavLabel", "characters": "Bank", "textStyle": "$text/label/sm/medium", "fill": "rgba(255,255,255,0.6)" }] },
+        { "type": "FRAME", "name": "NavVAT", "layout": "HORIZONTAL", "gap": 10, "fillH": true, "counterAxisAlignItems": "CENTER", "padding": { "top": 10, "right": 12, "bottom": 10, "left": 12 }, "cornerRadius": "$radius/radius-sm", "children": [{ "type": "TEXT", "name": "NavLabel", "characters": "VAT", "textStyle": "$text/label/sm/medium", "fill": "rgba(255,255,255,0.6)" }] },
+        { "type": "FRAME", "name": "NavPayroll", "layout": "HORIZONTAL", "gap": 10, "fillH": true, "counterAxisAlignItems": "CENTER", "padding": { "top": 10, "right": 12, "bottom": 10, "left": 12 }, "cornerRadius": "$radius/radius-sm", "children": [{ "type": "TEXT", "name": "NavLabel", "characters": "Payroll", "textStyle": "$text/label/sm/medium", "fill": "rgba(255,255,255,0.6)" }] },
+        { "type": "FRAME", "name": "NavReports", "layout": "HORIZONTAL", "gap": 10, "fillH": true, "counterAxisAlignItems": "CENTER", "padding": { "top": 10, "right": 12, "bottom": 10, "left": 12 }, "cornerRadius": "$radius/radius-sm", "children": [{ "type": "TEXT", "name": "NavLabel", "characters": "Reports", "textStyle": "$text/label/sm/medium", "fill": "rgba(255,255,255,0.6)" }] }
+      ]
+    },
+    { "type": "FRAME", "name": "Spacer", "layout": "VERTICAL", "fillV": true },
+    { "type": "FRAME", "name": "BottomDivider", "fillH": true, "height": 1, "fill": "rgba(255,255,255,0.08)" },
+    {
+      "type": "FRAME", "name": "UserSection", "layout": "VERTICAL", "gap": 4, "fillH": true, "padding": { "top": 8, "right": 0, "bottom": 0, "left": 0 },
+      "children": [
+        { "type": "TEXT", "name": "FirmName", "characters": "Protax Oy", "textStyle": "$text/label/sm/semibold", "fill": "$colour/neutral/white" },
+        { "type": "FRAME", "name": "UserRow", "layout": "HORIZONTAL", "gap": 8, "fillH": true, "counterAxisAlignItems": "CENTER", "children": [
+          { "type": "ELLIPSE", "name": "Avatar", "width": 32, "height": 32, "fill": "$colour/primary/500" },
+          { "type": "FRAME", "name": "UserInfo", "layout": "VERTICAL", "gap": 2, "children": [
+            { "type": "TEXT", "name": "UserName", "characters": "Kirsti Mäkinen", "textStyle": "$text/label/sm/medium", "fill": "$colour/neutral/white" },
+            { "type": "TEXT", "name": "UserRole", "characters": "Firm Admin", "textStyle": "$text/label/xs/regular", "fill": "rgba(255,255,255,0.5)" }
+          ]}
+        ]}
+      ]
+    }
+  ]
+}
