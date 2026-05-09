@@ -120,7 +120,9 @@ Each frame uses a **left sub-nav rail (220w)** inside the content panel for scre
 
 ## Layout architecture (non-negotiable)
 
-Same 10 rules as Phase 10 FA v4 ([2026-05-09-fixed-assets-v4-rebuild.md](2026-05-09-fixed-assets-v4-rebuild.md#layout-architecture-non-negotiable)).
+**Rule 0 (highest priority):** Always clone the base Dashboard Shell template (`706:2`). **Content Panel WIDTH is locked at 1120** — the 50px right gutter is reserved for bell + search + watermark. Resize **height only**. (See [`2026-05-09-fixed-assets-v4-rebuild.md`](2026-05-09-fixed-assets-v4-rebuild.md#layout-architecture-non-negotiable) for the full rule.)
+
+Same 10 rules as Phase 10 FA v4 — see linked spec.
 
 Plus **left sub-nav rail discipline**:
 
@@ -140,6 +142,10 @@ Plus **left sub-nav rail discipline**:
 - Verified each frame with screenshot
 
 ---
+
+## Fix log
+
+- **2026-05-09 (post-build):** Content Panel width on all 9 v4 frames reverted from 1170 → 1120 to restore the right gutter for bell + search + watermark. Same fix applied to all 10 FA v4 frames.
 
 ## Outstanding work
 

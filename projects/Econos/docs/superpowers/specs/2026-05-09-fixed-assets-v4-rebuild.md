@@ -36,7 +36,9 @@ All frames at y=5000 on the Fixed Assets page. v3 untouched at y=3111.
 
 ## Layout architecture (non-negotiable)
 
-1. **Page frame** = 1440 × auto. Sidebar FIXED 240. Top bar FIXED 64. Content area FILL within remaining ~1200, 24px gutters.
+**Rule 0 (highest priority):** Always clone the base Dashboard Shell template (`706:2`). **Content Panel WIDTH is locked at 1120** — the 50px right gutter (frame x=1390 → 1440) is reserved for the bell badge (frame x=1402, y=26), search icon (x=1402, y=65), and "Powered By Econos" watermark. Resizing the Content Panel wider than 1120 causes the top-bar date to visually collide with the bell. Resize **height only** when more vertical room is needed.
+
+1. **Page frame** = 1440 × auto. Sidebar FIXED 240. Top bar FIXED 64. Content Panel FIXED 1120w (template default). Right gutter 50px reserved for bell/search.
 2. **Spacing scale = 8 only** — 8 / 16 / 24 / 32 / 48 / 64.
 3. **Every text node = HUG**, with `textTruncation = "ENDING"` if living in a constrained cell. Never FIXED.
 4. **Every badge instance = HUG width × HUG height** with internal Auto Layout. If it renders as a solid block, the inner label is FIXED — fix the component, not the instance.
@@ -96,6 +98,10 @@ Three parallel general-purpose agents produced ~5,000 words of research:
 - **Responsive Auto Layout patterns 2025-2026** — Figma 2025 features (minWidth, layoutWrap=WRAP), Linear / Stripe / Vercel / Qonto / Mercury / Brex / Ramp reference patterns
 
 ---
+
+## Fix log
+
+- **2026-05-09 (post-build):** Content Panel width on all 10 v4 frames reverted from 1170 → 1120 to restore the right gutter that holds the bell badge + search icon + "Powered By Econos" watermark. The shell template's default of 1120 must not be overridden. Bug discovered during review of Firm Settings v4 against the v3 Invoice page chrome.
 
 ## Outstanding work
 
